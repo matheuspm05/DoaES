@@ -272,7 +272,8 @@ if (
   process.argv[1] &&
   import.meta.url === pathToFileURL(process.argv[1]).href
 ) {
-  const db = createDatabase();
+  await import("dotenv/config");
+  const db = createDatabase(process.env.SQLITE_PATH);
   console.log("Seed idempotente concluído:", seed(db));
   db.close();
 }

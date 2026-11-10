@@ -4,7 +4,7 @@ import { mkdirSync, existsSync } from "node:fs";
 import { createDatabase } from "../backend/src/database/index.js";
 import { seed } from "../backend/src/database/seed.js";
 import { createApp } from "../backend/src/app.js";
-import { today } from "../backend/src/services/donations.js";
+import { today } from "../backend/src/utils/dates.js";
 
 // Usa o navegador já instalado, sem baixar browser e sem tocar no banco da demo.
 const executablePath =
@@ -31,17 +31,31 @@ try {
     locale: "pt-BR",
     timezoneId: "America/Sao_Paulo",
   });
-  await context.route("**/api/**", async (route) => {
-    const url = new URL(route.request().url());
-    const response = await route.fetch({
-      url: `http://127.0.0.1:${server.address().port}${url.pathname}${url.search}`,
-    });
-    if (url.pathname === "/api/doacoes" && route.request().method() === "POST")
-      postBodies.push(route.request().postDataJSON());
-    await route.fulfill({ response });
-  });
+  await context.route(
+    (url) => url.pathname.startsWith("/api/"),
+    async (route) => {
+      const url = new URL(route.request().url());
+      const response = await route.fetch({
+        url: `http://127.0.0.1:${server.address().port}${url.pathname}${url.search}`,
+      });
+      if (
+        url.pathname === "/api/doacoes" &&
+        route.request().method() === "POST"
+      )
+        postBodies.push(route.request().postDataJSON());
+      await route.fulfill({ response });
+    },
+  );
   const page = await context.newPage();
   page.on("pageerror", (error) => errors.push(error.message));
+  page.on("requestfailed", (request) => {
+    if (
+      new URL(request.url()).pathname === "/favicon.svg" &&
+      request.failure()?.errorText === "net::ERR_ABORTED"
+    )
+      return;
+    errors.push(`${request.url()}: ${request.failure()?.errorText}`);
+  });
   async function visit(path, title) {
     await page.goto(`http://localhost:5173${path}`);
     const heading = page.locator("#conteudo h1");
@@ -59,12 +73,32 @@ try {
       `Overflow: ${page.url()} em ${(await page.viewportSize()).width}px`,
     );
   }
-  await visit("/", /novo começo/);
+  await visit("/", /Doações que/);
   await noOverflow();
   await page.screenshot({
     path: "test-results/desktop-inicio.png",
     fullPage: true,
   });
+  assert.equal(await page.locator(".landing-page main section").count(), 3);
+  for (const image of await page.locator(".landing-page img").all()) {
+    await image.evaluate((img) => img.decode());
+    assert.ok(await image.evaluate((img) => img.naturalWidth > 0));
+  }
+  await page
+    .getByLabel("Nome fictício", { exact: true })
+    .fill("Visitante Demo");
+  await page
+    .getByLabel("E-mail de exemplo", { exact: true })
+    .fill("teste@exemplo.invalid");
+  await page
+    .getByLabel("Sua mensagem demonstrativa")
+    .fill("Mensagem fictícia para conhecer o projeto.");
+  await page.getByRole("button", { name: "Simular envio" }).click();
+  await page
+    .getByRole("status")
+    .filter({ hasText: "Simulação concluída!" })
+    .waitFor();
+  assert.equal(postBodies.length, 0);
   await visit("/cadastro/doador", /Seu próximo gesto/);
   await visit("/cadastro/igreja", /Juntos/);
   await visit("/entrar", /Cada doação/);
@@ -101,16 +135,14 @@ try {
   assert.equal(await page.locator('input[type="date"]:invalid').count(), 1);
   assert.match(await page.locator(".step-pill").innerText(), /ETAPA 1/);
   await page.getByLabel("Validade do alimento").fill("2028-12-31");
-  await page
-    .getByLabel("Fotos demonstrativas")
-    .setInputFiles({
-      name: "foto-demo.png",
-      mimeType: "image/png",
-      buffer: Buffer.from(
-        "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jV1sAAAAASUVORK5CYII=",
-        "base64",
-      ),
-    });
+  await page.getByLabel("Fotos demonstrativas").setInputFiles({
+    name: "foto-demo.png",
+    mimeType: "image/png",
+    buffer: Buffer.from(
+      "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jV1sAAAAASUVORK5CYII=",
+      "base64",
+    ),
+  });
   assert.equal(await page.locator(".photo-grid img").count(), 1);
   await page.getByRole("button", { name: "Adicionar outro item" }).click();
   await page
@@ -179,6 +211,19 @@ try {
         path: `test-results/mobile-${path === "/" ? "inicio" : path.split("/").at(-1)}.png`,
         fullPage: true,
       });
+    if (path === "/") {
+      await page
+        .getByRole("button", { name: "Abrir menu", exact: true })
+        .click();
+      await page
+        .getByRole("navigation", { name: "Principal", exact: true })
+        .getByRole("link", { name: "Contato", exact: true })
+        .click();
+      await page
+        .locator(".landing-navigation.is-open")
+        .waitFor({ state: "hidden" });
+      await noOverflow();
+    }
   }
   await visit("/doador");
   await page.getByRole("button", { name: "Abrir menu", exact: true }).click();
@@ -208,9 +253,18 @@ try {
     path: "test-results/mobile-recebimento.png",
     fullPage: true,
   });
+  for (const width of [320, 768]) {
+    await page.setViewportSize({ width, height: 900 });
+    await visit("/", /Doações que/);
+    await noOverflow();
+    await page.screenshot({
+      path: `test-results/landing-${width}.png`,
+      fullPage: true,
+    });
+  }
   assert.deepEqual(errors, []);
   console.log(
-    `Interface verificada: ${count} visitas, desktop 1440px e mobile 375px, ciclo completo, validade, coleta, fotos locais e menu móvel. Sem erros JavaScript.`,
+    `Interface verificada: ${count} visitas, desktop 1440px e mobile 375px; landing também em 320px e 768px. Ciclo completo, contato simulado, validade, coleta, fotos locais e menus móveis. Sem erros JavaScript.`,
   );
 } catch (error) {
   const page = browser?.contexts()[0]?.pages()[0];

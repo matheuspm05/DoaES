@@ -1,0 +1,190 @@
+/* Acompanhamento */
+.detail-items {
+  margin: 20px 0;
+}
+.detail-items > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 19px 0;
+  border-top: 1px solid #e6ede6;
+}
+.detail-items strong {
+  font-size: 14px;
+}
+.detail-items p {
+  font-size: 12px;
+  margin-top: 6px;
+}
+.detail-items small {
+  font-size: 10px;
+}
+.icon-line {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.status-steps {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 9px;
+  padding: 15px 0 28px;
+  margin: 15px 0 0;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+.status-steps:before {
+  content: "";
+  position: absolute;
+  top: 31px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: #e5ece5;
+}
+.status-steps li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  position: relative;
+  width: 25%;
+}
+.status-steps li > span {
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+  background: #f0f3ee;
+  color: #9aaa9a;
+  display: grid;
+  place-items: center;
+  border: 3px solid #fff;
+  font-size: 11px;
+}
+.status-steps small {
+  font-size: 10px;
+}
+.status-steps .done > span {
+  background: var(--green);
+  color: white;
+}
+.status-steps .done small {
+  color: var(--green);
+  font-weight: 650;
+}
+.event-timeline {
+  list-style: none;
+  padding: 12px 0 0;
+  margin: 16px 0 0;
+}
+.event-timeline li {
+  display: flex;
+  position: relative;
+  gap: 17px;
+  padding-bottom: 25px;
+  align-items: flex-start;
+}
+.event-timeline li:last-child {
+  padding-bottom: 0;
+}
+.event-timeline li:not(:last-child):before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 13px;
+  bottom: 0;
+  width: 1px;
+  background: #dfe9df;
+}
+.event-timeline li > span {
+  width: 9px;
+  height: 9px;
+  border: 2px solid #73a98c;
+  background: #e9f6ed;
+  border-radius: 50%;
+  margin-top: 6px;
+  position: relative;
+}
+.event-timeline strong {
+  font-size: 12px;
+}
+.event-timeline p {
+  font-size: 12px;
+  margin-top: 4px;
+}
+.event-timeline small {
+  font-size: 10px;
+}
+.schedule-summary {
+  background: #edf6ec;
+  border: 1px solid #dbe9d9;
+  padding: 18px 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--green);
+  margin: 20px 0;
+}
+.schedule-summary strong {
+  font-size: 17px;
+  color: var(--navy);
+}
+.schedule-summary p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+.schedule-summary small {
+  display: block;
+  font-size: 11px;
+  margin-top: 7px;
+}
+.detail-grid aside .notice {
+  margin-bottom: 20px;
+}
+.detail-grid aside > .card > p {
+  font-size: 12px;
+}
+.detail-grid .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 22px;
+}
+.completion {
+  margin-top: 26px;
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+}
+.completion h3 {
+  font-size: 16px;
+  margin-bottom: 11px;
+}
+.completion p {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.success-card {
+  padding: 28px;
+  background: #e7f2e5;
+  border: 1px solid #d2e6cd;
+  border-radius: 14px;
+  color: var(--green);
+}
+.success-card h2 {
+  font-size: 23px;
+  line-height: 1.35;
+  margin: 18px 0 13px;
+}
+.success-card p {
+  font-size: 12px;
+}
+.spinning {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

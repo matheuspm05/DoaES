@@ -1,0 +1,718 @@
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 216px;
+    padding-inline: 12px;
+  }
+  .workspace {
+    margin-left: 216px;
+  }
+  .app-main {
+    padding: 28px 25px 0;
+  }
+  .page-head h1 {
+    font-size: 28px;
+  }
+  .page-head p {
+    font-size: 12px;
+  }
+  .grid {
+    gap: 16px;
+  }
+  .church-card,
+  .campaign-content {
+    padding: 18px;
+  }
+  .campaign-art {
+    padding: 20px 17px;
+  }
+  .campaign-art > svg {
+    width: 65px;
+  }
+  .art-caption {
+    font-size: 11px;
+  }
+  .donor-banner {
+    padding: 24px;
+  }
+  .donor-banner h2 {
+    font-size: 22px;
+  }
+  .donor-banner .compact {
+    width: 195px;
+    right: -26px;
+  }
+  .donor-banner > div {
+    max-width: 77%;
+  }
+  .padded,
+  .form-card {
+    padding: 23px;
+  }
+  .donation-row {
+    gap: 12px;
+  }
+  .row-arrow {
+    display: none;
+  }
+  .church-profile-banner {
+    padding: 24px;
+    gap: 17px;
+  }
+  .church-profile-banner h1 {
+    font-size: 24px;
+  }
+  .profile-church-icon {
+    width: 75px;
+    height: 75px;
+  }
+  .auth-grid {
+    gap: 50px;
+  }
+}
+@media (max-width: 980px) {
+  .public-nav {
+    gap: 20px;
+  }
+  .sidebar {
+    width: 198px;
+  }
+  .workspace {
+    margin-left: 198px;
+  }
+  .sidebar nav a {
+    font-size: 12px;
+    gap: 10px;
+    padding-inline: 10px;
+  }
+  .nav-label {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stats.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .stat-card {
+    padding: 18px 15px;
+  }
+  .stat-number {
+    font-size: 29px;
+  }
+  .stat-card > .icon-tile {
+    width: 29px;
+    height: 29px;
+  }
+  .stat-card > .icon-tile svg {
+    width: 17px;
+  }
+  .stat-card > span:last-child {
+    font-size: 10px;
+  }
+  .dashboard-columns {
+    grid-template-columns: 1fr;
+  }
+  .latest,
+  .impact-card {
+    display: none;
+  }
+  .donor-banner .compact {
+    width: 240px;
+    right: 0;
+  }
+  .detail-grid,
+  .donation-form,
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .delivery-card {
+    position: static;
+  }
+  .page-head {
+    align-items: flex-start;
+  }
+  .page-head > .button {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .filter-bar {
+    flex-wrap: wrap;
+  }
+  .filter-bar .search-field {
+    flex-basis: 100%;
+  }
+  .filter-bar > select {
+    flex: 1;
+    max-width: none;
+  }
+  .campaign-detail {
+    grid-template-columns: 1fr;
+  }
+  .detail-art {
+    min-height: 280px;
+    flex-direction: row;
+  }
+  .auth-grid {
+    gap: 28px;
+  }
+  .auth-card {
+    padding: 25px;
+  }
+  .auth-story h1 {
+    font-size: 39px;
+  }
+  .church-profile-banner {
+    flex-wrap: wrap;
+  }
+  .church-profile-banner > div {
+    flex: 1;
+  }
+}
+@media (max-width: 760px) {
+  .container {
+    padding-inline: 22px;
+  }
+  .public-header {
+    height: 72px;
+    position: relative;
+    z-index: 40;
+  }
+  .brand {
+    font-size: 26px;
+  }
+  .brand-symbol {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+  .mobile-menu {
+    display: grid;
+  }
+  .public-nav {
+    display: none;
+  }
+  .public-nav.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 71px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 15px 25px #183c3610;
+    padding: 16px 22px;
+    z-index: 45;
+  }
+  .public-nav.open > a {
+    padding: 14px 12px;
+  }
+  .public-nav.open > .button {
+    margin: 8px 0;
+  }
+  .public-footer {
+    flex-wrap: wrap;
+    padding-block: 27px;
+    gap: 22px;
+  }
+  .public-footer p {
+    flex: 1;
+    min-width: 160px;
+    font-size: 10px;
+  }
+  .public-footer > a:last-child {
+    font-size: 11px;
+  }
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.22s ease;
+    width: 270px;
+    padding: 27px 18px 20px;
+    z-index: 60;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .sidebar-logo {
+    padding-left: 7px;
+  }
+  .sidebar nav a {
+    font-size: 14px;
+    padding: 13px 15px;
+  }
+  .nav-label {
+    font-size: 9px;
+  }
+  .nav-scrim {
+    position: fixed;
+    inset: 0;
+    background: #142d244d;
+    z-index: 55;
+  }
+  .workspace {
+    margin-left: 0;
+  }
+  .app-header {
+    height: 67px;
+    padding-inline: 18px;
+  }
+  .header-breadcrumb {
+    font-size: 11px;
+    gap: 5px;
+  }
+  .slash {
+    margin: 0 7px;
+  }
+  .header-controls {
+    gap: 7px;
+  }
+  .header-controls .demo-pill {
+    font-size: 8px;
+    padding: 5px 7px;
+  }
+  .header-controls .avatar {
+    display: none;
+  }
+  .header-controls .icon-button {
+    width: 31px;
+  }
+  .demo-toolbar {
+    padding: 9px 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .demo-toolbar > label {
+    font-size: 10px;
+    gap: 6px;
+  }
+  .demo-toolbar select {
+    font-size: 10px;
+    max-width: 210px;
+  }
+  .demo-toolbar .context-selector {
+    max-width: 60%;
+  }
+  .demo-toolbar > label > span {
+    display: none;
+  }
+  .app-main {
+    padding: 27px 20px 75px;
+  }
+  .page-head {
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 25px;
+  }
+  .page-head h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .page-head .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.35px;
+  }
+  .page-head p {
+    font-size: 12px;
+    line-height: 1.85;
+  }
+  .three {
+    grid-template-columns: 1fr;
+  }
+  .stats.three {
+    gap: 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .stat-card {
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-height: 136px;
+  }
+  .stat-card > .icon-tile {
+    order: -1;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 13px;
+  }
+  .stat-number {
+    font-size: 27px;
+  }
+  .stat-card > span:last-child {
+    font-size: 9px;
+    line-height: 1.6;
+    margin-top: 5px;
+  }
+  .donor-banner {
+    padding: 25px 22px;
+  }
+  .donor-banner > div {
+    max-width: 78%;
+  }
+  .donor-banner h2 {
+    font-size: 23px;
+  }
+  .donor-banner .eyebrow {
+    font-size: 7px;
+  }
+  .donor-banner p {
+    font-size: 11px;
+    max-width: 195px;
+  }
+  .donor-banner .compact {
+    width: 175px;
+    right: -37px;
+    bottom: 2px;
+    opacity: 0.65;
+  }
+  .section-head {
+    gap: 13px;
+    margin-bottom: 17px;
+  }
+  .section-head h2 {
+    font-size: 18px;
+    max-width: 240px;
+  }
+  .section-head .text-link {
+    font-size: 10px;
+    flex-shrink: 0;
+  }
+  .list-card {
+    padding: 0 16px;
+  }
+  .donation-row {
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 17px 0;
+  }
+  .donation-row .icon-tile {
+    width: 36px;
+    height: 36px;
+    align-self: flex-start;
+    margin-top: 3px;
+  }
+  .donation-info {
+    flex-basis: calc(100% - 50px);
+  }
+  .donation-info strong {
+    font-size: 12px;
+  }
+  .donation-info > span {
+    font-size: 11px;
+  }
+  .donation-info small {
+    font-size: 9px;
+  }
+  .donation-row > .badge {
+    margin-left: 46px;
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+  .church-card {
+    padding: 23px;
+    min-height: 290px;
+  }
+  .church-card h3 {
+    font-size: 19px;
+  }
+  .campaign-art {
+    min-height: 190px;
+    padding: 24px;
+  }
+  .campaign-art > svg {
+    width: 85px;
+  }
+  .art-caption {
+    font-size: 14px;
+  }
+  .campaign-content {
+    padding: 22px;
+  }
+  .campaign-content h3 {
+    font-size: 21px;
+  }
+  .filter-bar {
+    padding: 12px;
+    gap: 10px;
+  }
+  .filter-bar > select {
+    font-size: 11px;
+    min-width: 120px;
+    padding: 10px;
+  }
+  .filter-bar .search-field {
+    min-width: 0;
+  }
+  .search-field input {
+    font-size: 11px;
+    padding: 11px 8px;
+  }
+  .results-line {
+    font-size: 10px;
+    line-height: 1.7;
+    flex-wrap: wrap;
+  }
+  .app-footer {
+    font-size: 9px;
+  }
+  .mobile-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    display: flex;
+    background: #fffefb;
+    border-top: 1px solid var(--line);
+    padding: 9px 10px max(10px, env(safe-area-inset-bottom));
+  }
+  .mobile-bottom a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 9px;
+    color: #7f9183;
+  }
+  .mobile-bottom a.active {
+    color: var(--green);
+    font-weight: 650;
+  }
+  .toast {
+    bottom: 84px;
+    font-size: 12px;
+    padding: 14px 15px;
+  }
+  .browse-public {
+    padding-block: 32px;
+  }
+  .church-profile-banner {
+    padding: 22px;
+  }
+  .profile-church-icon {
+    width: 61px;
+    height: 61px;
+  }
+  .profile-church-icon > svg {
+    width: 33px;
+  }
+  .church-profile-banner > div {
+    min-width: 180px;
+  }
+  .church-profile-banner h1 {
+    font-size: 25px;
+  }
+  .church-profile-banner .button {
+    margin-left: 0;
+    width: 100%;
+  }
+  .church-profile-banner p {
+    font-size: 11px;
+  }
+  .padded {
+    padding: 23px;
+  }
+  .padded > h2 {
+    font-size: 19px;
+  }
+  .padded > p {
+    font-size: 12px;
+  }
+  .detail-art {
+    padding: 24px;
+    gap: 10px;
+    min-height: 270px;
+  }
+  .detail-art > svg {
+    width: 110px;
+    height: 110px;
+  }
+  .detail-art .art-caption {
+    font-size: 20px;
+  }
+  .campaign-detail h1 {
+    font-size: 30px;
+  }
+  .auth-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-block: 30px;
+  }
+  .auth-story {
+    padding: 0;
+  }
+  .auth-story h1 {
+    font-size: 39px;
+    margin: 13px 0;
+  }
+  .auth-story > p {
+    font-size: 12px;
+  }
+  .auth-story .donation-art,
+  .auth-story > .micro {
+    display: none;
+  }
+  .auth-card {
+    padding: 25px;
+  }
+  .auth-card h2 {
+    font-size: 24px;
+  }
+  .auth-card > p {
+    font-size: 12px;
+  }
+  .role-card {
+    padding: 16px 12px;
+  }
+  .role-card strong {
+    font-size: 13px;
+  }
+  .register-container {
+    padding-top: 30px;
+  }
+  .form-card {
+    padding: 23px 20px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .span-two {
+    grid-column: auto;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 14px;
+    min-height: 46px;
+  }
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .form-actions .button {
+    flex: 1;
+    white-space: nowrap;
+  }
+  .check-line {
+    font-size: 11px;
+  }
+  .donation-form > .card {
+    padding: 23px 18px;
+  }
+  .item-fieldset {
+    padding: 17px 13px 0;
+  }
+  .item-fieldset .form-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+  }
+  .item-fieldset .span-two {
+    grid-column: span 2;
+  }
+  .item-fieldset .field > span {
+    font-size: 10px;
+  }
+  .item-fieldset .field input,
+  .item-fieldset .field select {
+    font-size: 12px;
+    padding: 10px 8px;
+  }
+  .item-fieldset .field:has(input[type="date"]) {
+    grid-column: span 2;
+  }
+  .item-top {
+    font-size: 11px;
+  }
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .step-pill {
+    font-size: 8px;
+  }
+  .form-progress {
+    font-size: 11px;
+  }
+  .delivery-option small {
+    font-size: 11px;
+  }
+  .profile-heading {
+    gap: 14px;
+  }
+  .profile-heading h2 {
+    font-size: 20px;
+  }
+  .large-avatar {
+    width: 55px;
+    height: 55px;
+  }
+  .status-steps small {
+    font-size: 8px;
+  }
+  .status-steps {
+    gap: 3px;
+  }
+  .status-steps li > span {
+    width: 31px;
+    height: 31px;
+  }
+  .detail-items strong {
+    font-size: 13px;
+  }
+  .detail-items p,
+  .event-timeline p {
+    font-size: 11px;
+  }
+  .back-link {
+    font-size: 11px;
+  }
+}
+@media (max-width: 370px) {
+  .container {
+    padding-inline: 17px;
+  }
+  .app-main {
+    padding-inline: 16px;
+  }
+  .demo-toolbar select {
+    max-width: 175px;
+  }
+  .header-controls .demo-pill {
+    font-size: 7px;
+  }
+  .stat-card {
+    padding: 15px 10px;
+  }
+  .stat-card > span:last-child {
+    font-size: 8px;
+  }
+  .page-head h1 {
+    font-size: 26px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+.field > label {
+  font-size: 12px;
+  font-weight: 650;
+  color: #365447;
+}
+.auth-card .field > label {
+  font-size: 12px;
+}
+@media (max-width: 760px) {
+  .item-fieldset .field > label {
+    font-size: 10px;
+  }
+}

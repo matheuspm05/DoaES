@@ -7,7 +7,7 @@ import { DatabaseSync } from "node:sqlite";
 import { createDatabase } from "../src/database/index.js";
 import { seed } from "../src/database/seed.js";
 import { createApp } from "../src/app.js";
-import { today } from "../src/services/donations.js";
+import { today } from "../src/utils/dates.js";
 
 test("API demo: integridade, persistência e ciclo completo", async (t) => {
   const folder = mkdtempSync(join(tmpdir(), "doaes-api-"));

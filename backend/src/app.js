@@ -1,28 +1,35 @@
 import express from "express";
 import cors from "cors";
 import { apiRoutes } from "./routes/api.js";
+import { errorHandler } from "./middleware/errorHandler.js";
+import { readConfig } from "./config.js";
+import { apiAccess, apiRateLimit } from "./middleware/apiAccess.js";
+import { ApiError } from "./utils/errors.js";
 
-export function createApp(db) {
+export function createApp(db, config = readConfig()) {
   const app = express();
   app.disable("x-powered-by");
-  app.use(cors({ origin: "http://localhost:5173" }));
+  if (config.production) app.set("trust proxy", 1);
+  app.use((req, res, next) => {
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("Cache-Control", "no-store");
+    const origin = req.get("origin");
+    if (origin && !config.allowedOrigins.includes(origin))
+      return next(new ApiError(403, "Origem não permitida."));
+    next();
+  });
+  app.use(
+    cors({
+      origin: config.allowedOrigins,
+      methods: ["GET", "HEAD", "POST", "PATCH", "OPTIONS"],
+      allowedHeaders: ["Content-Type", "X-Doaes-Key"],
+      credentials: false,
+      maxAge: 600,
+    }),
+  );
+  app.use("/api", apiAccess(config), apiRateLimit(config));
   app.use(express.json({ limit: "100kb" }));
   app.use("/api", apiRoutes(db));
-  app.use((error, _req, res, _next) => {
-    const status = error.status ?? 500;
-    if (status === 500) console.error(error);
-    res
-      .status(status)
-      .json({
-        erro:
-          status === 500
-            ? "Não foi possível concluir a operação."
-            : status === 413
-              ? "Dados excedem o limite de 100 KB."
-              : status === 400 && error.type === "entity.parse.failed"
-                ? "JSON inválido."
-                : error.message,
-      });
-  });
+  app.use(errorHandler);
   return app;
 }

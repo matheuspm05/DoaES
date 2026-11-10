@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ImagePlus, X } from "lucide-react";
-import { ErrorMessage } from "./ui";
+import { ErrorMessage } from "./ui/ErrorMessage";
 
 export default function PhotoPreview() {
   const urls = useRef([]);

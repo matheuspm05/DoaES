@@ -1,0 +1,486 @@
+/* Formularios e acesso demo */
+.auth-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 85px;
+  padding-top: 66px;
+  padding-bottom: 60px;
+  align-items: center;
+  max-width: 1140px;
+}
+.auth-story {
+  padding: 12px;
+}
+.auth-story h1 {
+  font-size: 49px;
+  line-height: 1.15;
+  margin: 19px 0 20px;
+  letter-spacing: -2px;
+}
+.auth-story > p {
+  font-size: 14px;
+  max-width: 340px;
+}
+.auth-story .donation-art {
+  max-width: 380px;
+  margin: 10px auto 0;
+}
+.auth-story > .micro {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+}
+.auth-card {
+  padding: 34px;
+}
+.auth-card h2 {
+  font-size: 25px;
+  margin: 21px 0 12px;
+}
+.auth-card > p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+.role-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #d7e7db;
+  padding: 19px 15px;
+  border-radius: 11px;
+  background: #f9fcf8;
+  width: 100%;
+  text-align: left;
+  margin: 24px 0;
+  color: var(--green);
+}
+.role-card:hover {
+  border-color: var(--green);
+  background: #f0f8ef;
+}
+.role-card > span:nth-child(2) {
+  flex: 1;
+}
+.role-card strong {
+  display: block;
+  font-size: 14px;
+  color: var(--navy);
+}
+.role-card small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 5px;
+}
+.role-card > .icon-tile {
+  height: 40px;
+  width: 40px;
+}
+.auth-card .field {
+  margin: 0;
+}
+.auth-card .field > span,
+.auth-card .field select {
+  font-size: 12px;
+}
+.auth-card .notice {
+  background: #f5f5eb;
+  font-size: 11px;
+  color: #73735b;
+  line-height: 1.8;
+}
+.auth-links {
+  text-align: center;
+  font-size: 11px;
+  line-height: 2;
+  margin-top: 24px;
+  color: var(--muted);
+}
+.auth-links a {
+  color: var(--green);
+  font-weight: 650;
+}
+.auth-links span {
+  margin: 0 17px;
+}
+.register-container {
+  max-width: 850px;
+  padding-top: 50px;
+  padding-bottom: 35px;
+}
+.form-card {
+  padding: 28px;
+}
+.form-card > h2 {
+  margin-bottom: 20px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 19px;
+}
+.span-two {
+  grid-column: span 2;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  min-width: 0;
+}
+.field > span {
+  font-size: 12px;
+  font-weight: 650;
+  color: #365447;
+}
+.field small {
+  font-size: 10px;
+  font-weight: 400;
+}
+.field input,
+.field select,
+.field textarea {
+  font-size: 13px;
+}
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  align-items: center;
+  margin: 28px 0 15px;
+}
+.form-actions > a:not(.button) {
+  font-size: 12px;
+  color: var(--green);
+}
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.checkbox-grid label,
+.check-line {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-size: 12px;
+  color: #56705f;
+}
+.check-line {
+  margin: 20px 0;
+  line-height: 1.8;
+}
+.form-intro {
+  font-size: 12px;
+  margin: 10px 0 25px;
+  line-height: 1.8;
+}
+.step-pill {
+  border: 1px solid #d8e9de;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.form-progress {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 12px;
+  color: #8a9c8d;
+  margin-bottom: 27px;
+}
+.form-progress i {
+  width: 45px;
+  height: 1px;
+  background: #d9e4db;
+}
+.form-progress .active {
+  color: var(--green);
+  font-weight: 650;
+}
+.donation-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 23px;
+}
+.item-fieldset {
+  padding: 19px 18px 0;
+  border: 1px solid #dfe9df;
+  border-radius: 11px;
+  margin-top: 20px;
+}
+.item-fieldset > legend {
+  padding: 0 7px;
+  margin: 0;
+  color: #67836b;
+  font-size: 10px;
+  font-weight: 650;
+}
+.item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.danger-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  background: transparent;
+  color: #a2544b;
+  padding: 3px;
+}
+.photo-section {
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+}
+.photo-section h3 {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+.photo-section h3 > span {
+  font-weight: 400;
+  margin-left: 6px;
+}
+.photo-drop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  cursor: pointer;
+  border: 1px dashed #aec9b6;
+  border-radius: 10px;
+  padding: 25px 15px;
+  background: #f7faf5;
+  color: var(--green);
+}
+.photo-drop input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.photo-drop:focus-within {
+  outline: 3px solid #c0883c;
+  outline-offset: 3px;
+}
+.photo-drop strong {
+  font-size: 12px;
+}
+.photo-drop span {
+  font-size: 10px;
+  color: var(--muted);
+}
+.photo-section > .micro {
+  font-size: 10px;
+  margin-top: 11px;
+  line-height: 1.9;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 14px 0;
+}
+.photo-grid > div {
+  position: relative;
+  aspect-ratio: 1;
+}
+.photo-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.photo-grid button {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  background: #183c36d9;
+  color: white;
+  border-radius: 5px;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+}
+.delivery-card {
+  position: sticky;
+  top: 24px;
+}
+.delivery-card h2 {
+  font-size: 19px;
+}
+.delivery-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid var(--line);
+  padding: 18px 13px;
+  border-radius: 10px;
+  margin-bottom: 13px;
+  cursor: pointer;
+}
+.delivery-option input {
+  margin-top: 4px;
+  width: 14px;
+  height: 14px;
+}
+.delivery-option > svg {
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+  color: var(--green);
+}
+.delivery-option.selected {
+  border-color: #80b99d;
+  background: #f0f8ee;
+}
+.delivery-option strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.delivery-option small {
+  font-size: 10px;
+  display: block;
+  line-height: 1.8;
+}
+.delivery-card > .notice {
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+.delivery-card > h3 {
+  font-size: 15px;
+  margin-bottom: 13px;
+}
+.delivery-card > p:not(.form-intro) {
+  font-size: 12px;
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+.delivery-bottom {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  margin-top: 24px;
+}
+.delivery-bottom p {
+  font-size: 10px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+.cancel-link {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 16px;
+}
+.review > .icon-tile {
+  margin-bottom: 20px;
+}
+.review > h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.review > p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+.review-items {
+  margin: 24px 0;
+}
+.review-items > div {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.review-items h3 {
+  margin: 9px 0 6px;
+  font-size: 16px;
+}
+.review-items p {
+  font-size: 12px;
+}
+.review > .notice {
+  margin-bottom: 22px;
+}
+.profile-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: 25px;
+  align-items: start;
+}
+.profile-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 27px;
+  margin-bottom: 28px;
+}
+.large-avatar {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  background: #edf4e8;
+  border-radius: 50%;
+  color: var(--green);
+  flex-shrink: 0;
+}
+.profile-heading h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.profile-notice {
+  display: block;
+  padding: 28px;
+  background: #edf3e6;
+}
+.profile-notice h2 {
+  font-size: 22px;
+  margin: 18px 0;
+}
+.profile-notice p {
+  font-size: 12px;
+  margin: 15px 0;
+  line-height: 1.9;
+}
+.settings-form {
+  max-width: 870px;
+}
+.settings-form fieldset {
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+  margin: 16px 0;
+}
+.settings-form fieldset > legend {
+  margin-bottom: 0;
+}
+.settings-form fieldset > .micro {
+  font-size: 11px;
+  margin-top: 14px;
+}
+.campaign-editor {
+  max-width: 740px;
+}
+.campaign-editor > .icon-tile {
+  margin-bottom: 20px;
+}
+.campaign-editor .notice {
+  font-size: 12px;
+}

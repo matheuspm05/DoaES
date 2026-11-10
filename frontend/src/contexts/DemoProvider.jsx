@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { DemoContext } from "./demo";
-import { api } from "../services/api";
+import { loadDemoData } from "../services/demo";
 
 const read = (key, fallback) => {
   try {
@@ -20,17 +20,7 @@ export default function DemoProvider({ children }) {
   const reload = useCallback(async () => {
     setRefreshing(true);
     try {
-      const [churches, campaigns, categories, donations, donors] =
-        await Promise.all(
-          [
-            "/igrejas",
-            "/campanhas",
-            "/categorias",
-            "/doacoes",
-            "/doadores-demo",
-          ].map((p) => api(p)),
-        );
-      setData({ churches, campaigns, categories, donations, donors });
+      setData(await loadDemoData());
       setError("");
     } catch (e) {
       setError(e.message);
@@ -41,18 +31,9 @@ export default function DemoProvider({ children }) {
   }, []);
   useEffect(() => {
     let active = true;
-    Promise.all(
-      [
-        "/igrejas",
-        "/campanhas",
-        "/categorias",
-        "/doacoes",
-        "/doadores-demo",
-      ].map((p) => api(p)),
-    )
-      .then(([churches, campaigns, categories, donations, donors]) => {
-        if (active)
-          setData({ churches, campaigns, categories, donations, donors });
+    loadDemoData()
+      .then((result) => {
+        if (active) setData(result);
       })
       .catch((e) => {
         if (active) setError(e.message);

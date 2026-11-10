@@ -1,11 +1,14 @@
+import "dotenv/config";
 import { createDatabase } from "./database/index.js";
 import { seed } from "./database/seed.js";
 import { createApp } from "./app.js";
+import { readConfig } from "./config.js";
 
-const db = createDatabase();
+const config = readConfig();
+const db = createDatabase(process.env.SQLITE_PATH);
 seed(db);
-const server = createApp(db).listen(3001, "localhost", () =>
-  console.log("DoaES API: http://localhost:3001 - Modo demonstracao"),
+const server = createApp(db, config).listen(config.port, config.host, () =>
+  console.log(`DoaES API na porta ${config.port} - Modo demonstracao`),
 );
 function close() {
   server.close(() => {

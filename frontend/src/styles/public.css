@@ -1,0 +1,63 @@
+/* Paginas publicas */
+.public-header {
+  height: 87px;
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.public-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 13px;
+  font-weight: 550;
+}
+.public-nav > a:hover {
+  color: var(--green);
+}
+.public-nav > .button:hover {
+  color: white;
+}
+.donation-art {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.public-footer {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 32px;
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.public-footer .brand {
+  font-size: 22px;
+}
+.public-footer .brand-symbol {
+  width: 31px;
+  height: 31px;
+  border-radius: 9px;
+}
+.public-footer p {
+  font-size: 12px;
+  line-height: 1.9;
+}
+.public-footer > a:last-child {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--green);
+}
+.browse-public {
+  padding-top: 46px;
+  padding-bottom: 40px;
+}
