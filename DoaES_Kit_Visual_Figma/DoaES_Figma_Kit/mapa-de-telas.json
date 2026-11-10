@@ -1,0 +1,205 @@
+{
+  "project": "DoaES",
+  "description": "Protótipo de UX/UI baseado no documento DoaES 2026; nomes e dados nos layouts são fictícios.",
+  "screens": [
+    {
+      "id": "01-inicio",
+      "title": "Página inicial",
+      "group": "Público",
+      "svg": "desktop/01-inicio.svg",
+      "next": [
+        "02-login",
+        "03-cadastro-doador",
+        "04-cadastro-igreja"
+      ]
+    },
+    {
+      "id": "02-login",
+      "title": "Entrar",
+      "group": "Público",
+      "svg": "desktop/02-login.svg",
+      "next": [
+        "03-cadastro-doador",
+        "04-cadastro-igreja",
+        "05-painel-doador",
+        "13-painel-igreja"
+      ]
+    },
+    {
+      "id": "03-cadastro-doador",
+      "title": "Cadastro de doador",
+      "group": "Público",
+      "svg": "desktop/03-cadastro-doador.svg",
+      "next": [
+        "02-login",
+        "05-painel-doador"
+      ]
+    },
+    {
+      "id": "04-cadastro-igreja",
+      "title": "Cadastro de igreja",
+      "group": "Público",
+      "svg": "desktop/04-cadastro-igreja.svg",
+      "next": [
+        "02-login",
+        "13-painel-igreja"
+      ]
+    },
+    {
+      "id": "05-painel-doador",
+      "title": "Painel do doador",
+      "group": "Doador",
+      "svg": "desktop/05-painel-doador.svg",
+      "next": [
+        "06-explorar-igrejas",
+        "09-nova-doacao",
+        "10-acompanhar"
+      ]
+    },
+    {
+      "id": "06-explorar-igrejas",
+      "title": "Explorar igrejas",
+      "group": "Doador",
+      "svg": "desktop/06-explorar-igrejas.svg",
+      "next": [
+        "07-detalhe-igreja",
+        "08-campanhas"
+      ]
+    },
+    {
+      "id": "07-detalhe-igreja",
+      "title": "Detalhe da igreja",
+      "group": "Doador",
+      "svg": "desktop/07-detalhe-igreja.svg",
+      "next": [
+        "09-nova-doacao",
+        "06-explorar-igrejas"
+      ]
+    },
+    {
+      "id": "08-campanhas",
+      "title": "Campanhas",
+      "group": "Doador",
+      "svg": "desktop/08-campanhas.svg",
+      "next": [
+        "09-nova-doacao"
+      ]
+    },
+    {
+      "id": "09-nova-doacao",
+      "title": "Cadastrar doação",
+      "group": "Doador",
+      "svg": "desktop/09-nova-doacao.svg",
+      "next": [
+        "10-acompanhar"
+      ]
+    },
+    {
+      "id": "10-acompanhar",
+      "title": "Acompanhar doação",
+      "group": "Doador",
+      "svg": "desktop/10-acompanhar.svg",
+      "next": [
+        "11-historico"
+      ]
+    },
+    {
+      "id": "11-historico",
+      "title": "Histórico de doações",
+      "group": "Doador",
+      "svg": "desktop/11-historico.svg",
+      "next": [
+        "10-acompanhar"
+      ]
+    },
+    {
+      "id": "12-perfil-doador",
+      "title": "Perfil do doador",
+      "group": "Doador",
+      "svg": "desktop/12-perfil-doador.svg",
+      "next": [
+        "05-painel-doador"
+      ]
+    },
+    {
+      "id": "13-painel-igreja",
+      "title": "Painel da igreja",
+      "group": "Igreja",
+      "svg": "desktop/13-painel-igreja.svg",
+      "next": [
+        "16-solicitacoes",
+        "15-gerenciar-campanhas"
+      ]
+    },
+    {
+      "id": "14-configurar-igreja",
+      "title": "Perfil e coleta",
+      "group": "Igreja",
+      "svg": "desktop/14-configurar-igreja.svg",
+      "next": [
+        "13-painel-igreja"
+      ]
+    },
+    {
+      "id": "15-gerenciar-campanhas",
+      "title": "Gerenciar campanhas",
+      "group": "Igreja",
+      "svg": "desktop/15-gerenciar-campanhas.svg",
+      "next": [
+        "13-painel-igreja"
+      ]
+    },
+    {
+      "id": "16-solicitacoes",
+      "title": "Solicitações recebidas",
+      "group": "Igreja",
+      "svg": "desktop/16-solicitacoes.svg",
+      "next": [
+        "17-analisar-doacao"
+      ]
+    },
+    {
+      "id": "17-analisar-doacao",
+      "title": "Analisar solicitação",
+      "group": "Igreja",
+      "svg": "desktop/17-analisar-doacao.svg",
+      "next": [
+        "18-agendamento",
+        "16-solicitacoes"
+      ]
+    },
+    {
+      "id": "18-agendamento",
+      "title": "Agendamento e recebimento",
+      "group": "Igreja",
+      "svg": "desktop/18-agendamento.svg",
+      "next": [
+        "13-painel-igreja"
+      ]
+    }
+  ],
+  "mobile": [
+    "mobile-inicio.svg",
+    "mobile-login.svg",
+    "mobile-painel-doador.svg",
+    "mobile-nova-doacao.svg",
+    "mobile-painel-igreja.svg",
+    "mobile-solicitacoes.svg"
+  ],
+  "palette": {
+    "navy": "#183C36",
+    "green": "#0E826C",
+    "mint": "#D9F3E9",
+    "pale": "#F6F9F7",
+    "white": "#FFFFFF",
+    "ink": "#182D29",
+    "gray": "#6B7E78",
+    "line": "#DFE9E4",
+    "soft": "#EAF3EE",
+    "amber": "#FFF1D6",
+    "orange": "#A96D13",
+    "red": "#B14C4C",
+    "blue": "#E8F2FA"
+  },
+  "note": "SVG importável como vetor; estrutura de componentes e prototipação nativa do Figma dependem de finalização no editor."
+}

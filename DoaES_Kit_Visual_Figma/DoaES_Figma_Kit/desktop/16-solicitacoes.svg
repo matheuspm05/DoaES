@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<title>DoaES UI design</title>
+<rect x="0" y="0" width="1440" height="900" rx="0" fill="#F6F9F7"/>
+<rect x="0" y="0" width="248" height="900" rx="0" fill="#FFFFFF"/>
+<line x1="248" y1="0" x2="248" y2="900" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="28" y="32" width="39" height="39" rx="12" fill="#0E826C"/>
+<path d="M 38 51 C 29 37 53 35 47.5 49 C 43 36 68 38 57 51 L 48 61 Z" fill="#FFFFFF"/>
+<text x="78" y="60" font-size="27" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">doa</text>
+<text x="128" y="60" font-size="27" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">ES</text>
+<text x="31" y="120" font-size="10" font-weight="750" fill="#92A59F" letter-spacing="1.2" font-family="Inter, Arial, Helvetica, sans-serif">MENU PRINCIPAL</text>
+<rect x="32" y="140" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="154" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Visão geral</text>
+<rect x="32" y="199" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="213" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Solicitações</text>
+<rect x="32" y="258" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="272" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Campanhas</text>
+<rect x="32" y="317" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="331" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Agendamento</text>
+<rect x="32" y="376" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="390" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Perfil e coleta</text>
+<rect x="17" y="765" width="214" height="109" rx="14" fill="#EAF3EE"/>
+<text x="34" y="796" font-size="12" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">DoaES • MVP acadêmico</text>
+<text x="34" y="819" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Intermediamos doações.</text>
+<text x="34" y="839" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Não realizamos transporte.</text>
+<rect x="248" y="0" width="1192" height="88" rx="0" fill="#FFFFFF"/>
+<line x1="248" y1="88" x2="1440" y2="88" stroke="#DFE9E4" stroke-width="1"/>
+<text x="293" y="53" font-size="14" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">DoaES   /   Igreja</text>
+<rect x="1029" y="21" width="250" height="46" rx="12" fill="#F6F9F7"/>
+<text x="1050" y="50" font-size="14" font-weight="400" fill="#9AACA4" font-family="Inter, Arial, Helvetica, sans-serif">Buscar no sistema...</text>
+<circle cx="1358" cy="45" r="21" fill="#D9F3E9" opacity="1"/>
+<text x="1358" y="50" font-size="15" font-weight="700" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">I</text>
+<text x="294" y="146" font-size="31" font-weight="750" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Solicitações recebidas</text>
+<text x="294" y="178" font-size="15" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Gestão simples e transparente de doações na sua região.</text>
+<text x="294" y="229" font-size="21" font-weight="720" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Aguardando sua análise</text>
+<rect x="1069" y="207" width="125" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1131.5" y="226" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Pendentes</text>
+<rect x="1208" y="207" width="107" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1261.5" y="226" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Todas</text>
+<rect x="294" y="269" width="1050" height="533" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="342" cy="322" r="22" fill="#D9F3E9" opacity="1"/>
+<text x="342" y="327" font-size="14" font-weight="700" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">A</text>
+<text x="380" y="318" font-size="17" font-weight="680" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Ana Silva</text>
+<text x="380" y="344" font-size="13" font-weight="430" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Roupas e brinquedos  •  28/10/2026</text>
+<rect x="976" y="304" width="116" height="28" rx="14" fill="#FFF1D6"/>
+<text x="1034.0" y="323" font-size="12" font-weight="650" fill="#A96D13" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Pendente</text>
+<rect x="1113" y="296" width="189" height="48" rx="12" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="1207.5" y="325.0" font-size="15" font-weight="650" fill="#183C36" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Analisar</text>
+<line x1="318" y1="385" x2="1318" y2="385" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="342" cy="444" r="22" fill="#D9F3E9" opacity="1"/>
+<text x="342" y="449" font-size="14" font-weight="700" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">L</text>
+<text x="380" y="440" font-size="17" font-weight="680" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Lucas Pereira</text>
+<text x="380" y="466" font-size="13" font-weight="430" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Alimentos não perecíveis  •  29/10/2026</text>
+<rect x="976" y="426" width="116" height="28" rx="14" fill="#FFF1D6"/>
+<text x="1034.0" y="445" font-size="12" font-weight="650" fill="#A96D13" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Pendente</text>
+<rect x="1113" y="418" width="189" height="48" rx="12" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="1207.5" y="447.0" font-size="15" font-weight="650" fill="#183C36" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Analisar</text>
+<line x1="318" y1="507" x2="1318" y2="507" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="342" cy="566" r="22" fill="#D9F3E9" opacity="1"/>
+<text x="342" y="571" font-size="14" font-weight="700" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">M</text>
+<text x="380" y="562" font-size="17" font-weight="680" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Mariana Costa</text>
+<text x="380" y="588" font-size="13" font-weight="430" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Produtos de higiene  •  27/10/2026</text>
+<rect x="976" y="548" width="116" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1034.0" y="567" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Aceita</text>
+<rect x="1113" y="540" width="189" height="48" rx="12" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="1207.5" y="569.0" font-size="15" font-weight="650" fill="#183C36" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Analisar</text>
+<line x1="318" y1="629" x2="1318" y2="629" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="342" cy="688" r="22" fill="#D9F3E9" opacity="1"/>
+<text x="342" y="693" font-size="14" font-weight="700" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">J</text>
+<text x="380" y="684" font-size="17" font-weight="680" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">José Almeida</text>
+<text x="380" y="710" font-size="13" font-weight="430" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Roupas  •  26/10/2026</text>
+<rect x="976" y="670" width="116" height="28" rx="14" fill="#FCEAEA"/>
+<text x="1034.0" y="689" font-size="12" font-weight="650" fill="#B14C4C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Recusada</text>
+<rect x="1113" y="662" width="189" height="48" rx="12" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="1207.5" y="691.0" font-size="15" font-weight="650" fill="#183C36" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Analisar</text>
+<line x1="318" y1="751" x2="1318" y2="751" stroke="#DFE9E4" stroke-width="1"/>
+<text x="294" y="876" font-size="11" font-weight="450" fill="#9AACA4" font-family="Inter, Arial, Helvetica, sans-serif">DoaES  ·  Projeto acadêmico  ·  Dados ilustrativos</text>
+</svg>

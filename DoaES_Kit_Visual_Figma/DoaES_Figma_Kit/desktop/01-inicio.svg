@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<title>DoaES UI design</title>
+<rect x="0" y="0" width="1440" height="900" rx="0" fill="#F6F9F7"/>
+<rect x="0" y="0" width="1440" height="90" rx="0" fill="#FFFFFF"/>
+<line x1="0" y1="90" x2="1440" y2="90" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="75" y="31" width="39" height="39" rx="12" fill="#0E826C"/>
+<path d="M 85 50 C 76 36 100 34 94.5 48 C 90 35 115 37 104 50 L 95 60 Z" fill="#FFFFFF"/>
+<text x="125" y="59" font-size="27" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">doa</text>
+<text x="175" y="59" font-size="27" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">ES</text>
+<text x="755" y="54" font-size="15" font-weight="550" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Como funciona</text>
+<text x="913" y="54" font-size="15" font-weight="550" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Explorar igrejas</text>
+<text x="1079" y="54" font-size="15" font-weight="550" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Campanhas</text>
+<rect x="1245" y="20" width="120" height="48" rx="12" fill="#0E826C"/>
+<text x="1305.0" y="49.0" font-size="15" font-weight="650" fill="#FFFFFF" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Entrar</text>
+<rect x="0" y="90" width="1440" height="570" rx="0" fill="#E9F5EE"/>
+<circle cx="1303" cy="338" r="237" fill="#D9EFE1" opacity="1"/>
+<circle cx="1214" cy="280" r="145" fill="#BFE7D1" opacity="1"/>
+<rect x="78" y="180" width="239" height="28" rx="14" fill="#D9F3E9"/>
+<text x="197.5" y="199" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">DOAÇÕES QUE TRANSFORMAM</text>
+<text x="77" y="279" font-size="55" font-weight="780" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Conectamos quem</text>
+<text x="77" y="342" font-size="55" font-weight="780" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">quer doar a quem</text>
+<text x="77" y="405" font-size="55" font-weight="780" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">faz a diferença.</text>
+<text x="79" y="452" font-size="17" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Encontre igrejas que precisam de roupas, brinquedos,</text>
+<text x="79" y="482" font-size="17" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">alimentos e itens de higiene em Vila Velha e Vitória.</text>
+<rect x="80" y="540" width="198" height="48" rx="12" fill="#0E826C"/>
+<text x="179.0" y="569.0" font-size="15" font-weight="650" fill="#FFFFFF" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Quero fazer uma doação</text>
+<rect x="290" y="540" width="193" height="48" rx="12" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="386.5" y="569.0" font-size="15" font-weight="650" fill="#183C36" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Sou uma igreja</text>
+<rect x="900" y="224" width="320" height="301" rx="27" fill="#FFFFFF"/>
+<rect x="932" y="253" width="258" height="172" rx="17" fill="#EDF8F1"/>
+<circle cx="1125.5" cy="286" r="33" fill="#D6F2E4" opacity="1"/>
+<rect x="974" y="310" width="95" height="74" rx="10" fill="#E0B98A"/>
+<rect x="963" y="299" width="116" height="18" rx="5" fill="#B98E5B"/>
+<path d="M1019 334 C987 301 984 356 1021 367 C1061 350 1050 302 1019 334" fill="#FFFFFF"/>
+<rect x="1125" y="328" width="40" height="54" rx="7" fill="#A2D9BD"/>
+<rect x="1114" y="317" width="62" height="15" rx="5" fill="#0E826C"/>
+<text x="931" y="461" font-size="18" font-weight="730" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Uma boa ação começa aqui</text>
+<text x="931" y="489" font-size="13" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Simples, segura e com propósito.</text>
+<rect x="80" y="698" width="408" height="134" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="119" cy="735" r="21" fill="#D9F3E9" opacity="1"/>
+<text x="119" y="742" font-size="14" font-weight="750" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">01</text>
+<text x="158" y="742" font-size="17" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Encontre uma igreja</text>
+<text x="158" y="777" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Descubra necessidades reais da sua região.</text>
+<rect x="518" y="698" width="408" height="134" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="557" cy="735" r="21" fill="#D9F3E9" opacity="1"/>
+<text x="557" y="742" font-size="14" font-weight="750" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">02</text>
+<text x="596" y="742" font-size="17" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Cadastre sua doação</text>
+<text x="596" y="777" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Informe os itens e envie fotos se quiser.</text>
+<rect x="956" y="698" width="408" height="134" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="995" cy="735" r="21" fill="#D9F3E9" opacity="1"/>
+<text x="995" y="742" font-size="14" font-weight="750" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">03</text>
+<text x="1034" y="742" font-size="17" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Combine a entrega</text>
+<text x="1034" y="777" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">A igreja aceita e combina coleta ou entrega.</text>
+<text x="78" y="873" font-size="11" font-weight="400" fill="#91A49A" font-family="Inter, Arial, Helvetica, sans-serif">DoaES · Projeto acadêmico · Interface conceitual</text>
+</svg>

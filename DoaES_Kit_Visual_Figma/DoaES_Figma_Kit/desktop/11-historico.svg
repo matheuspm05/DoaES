@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<title>DoaES UI design</title>
+<rect x="0" y="0" width="1440" height="900" rx="0" fill="#F6F9F7"/>
+<rect x="0" y="0" width="248" height="900" rx="0" fill="#FFFFFF"/>
+<line x1="248" y1="0" x2="248" y2="900" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="28" y="32" width="39" height="39" rx="12" fill="#0E826C"/>
+<path d="M 38 51 C 29 37 53 35 47.5 49 C 43 36 68 38 57 51 L 48 61 Z" fill="#FFFFFF"/>
+<text x="78" y="60" font-size="27" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">doa</text>
+<text x="128" y="60" font-size="27" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">ES</text>
+<text x="31" y="120" font-size="10" font-weight="750" fill="#92A59F" letter-spacing="1.2" font-family="Inter, Arial, Helvetica, sans-serif">MENU PRINCIPAL</text>
+<rect x="32" y="140" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="154" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Visão geral</text>
+<rect x="32" y="199" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="213" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Explorar igrejas</text>
+<rect x="32" y="258" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="272" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Campanhas</text>
+<rect x="32" y="317" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="331" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Nova doação</text>
+<rect x="32" y="376" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="390" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Acompanhar</text>
+<rect x="32" y="435" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="449" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Histórico</text>
+<rect x="32" y="494" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="508" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Meu perfil</text>
+<rect x="17" y="765" width="214" height="109" rx="14" fill="#EAF3EE"/>
+<text x="34" y="796" font-size="12" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">DoaES • MVP acadêmico</text>
+<text x="34" y="819" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Intermediamos doações.</text>
+<text x="34" y="839" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Não realizamos transporte.</text>
+<rect x="248" y="0" width="1192" height="88" rx="0" fill="#FFFFFF"/>
+<line x1="248" y1="88" x2="1440" y2="88" stroke="#DFE9E4" stroke-width="1"/>
+<text x="293" y="53" font-size="14" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">DoaES   /   Doador</text>
+<rect x="1029" y="21" width="250" height="46" rx="12" fill="#F6F9F7"/>
+<text x="1050" y="50" font-size="14" font-weight="400" fill="#9AACA4" font-family="Inter, Arial, Helvetica, sans-serif">Buscar no sistema...</text>
+<circle cx="1358" cy="45" r="21" fill="#D9F3E9" opacity="1"/>
+<text x="1358" y="50" font-size="15" font-weight="700" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">M</text>
+<text x="294" y="146" font-size="31" font-weight="750" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Histórico de doações</text>
+<text x="294" y="178" font-size="15" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Gestão simples e transparente de doações na sua região.</text>
+<rect x="294" y="218" width="1050" height="589" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="322" y="269" font-size="21" font-weight="730" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Todas as suas doações</text>
+<rect x="1066" y="243" width="86" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1109.0" y="262" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Todas</text>
+<rect x="1164" y="243" width="149" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1238.5" y="262" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Em andamento</text>
+<rect x="311" y="308" width="1015" height="48" rx="9" fill="#F6F9F7"/>
+<text x="322" y="338" font-size="13" font-weight="700" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Identificação</text>
+<text x="515" y="338" font-size="13" font-weight="700" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Instituição</text>
+<text x="770" y="338" font-size="13" font-weight="700" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Itens</text>
+<text x="1031" y="338" font-size="13" font-weight="700" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Data</text>
+<text x="1185" y="338" font-size="13" font-weight="700" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Situação</text>
+<line x1="311" y1="445" x2="1326" y2="445" stroke="#DFE9E4" stroke-width="1"/>
+<text x="322" y="407" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">#DOA-024</text>
+<text x="515" y="407" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">Igreja Esperança</text>
+<text x="770" y="407" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">Roupas e brinquedos</text>
+<text x="1031" y="407" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">28/10/26</text>
+<rect x="1178" y="386" width="116" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1236.0" y="405" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Aceita</text>
+<line x1="311" y1="541" x2="1326" y2="541" stroke="#DFE9E4" stroke-width="1"/>
+<text x="322" y="503" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">#DOA-019</text>
+<text x="515" y="503" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">Comunidade Vida Nova</text>
+<text x="770" y="503" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">Alimentos</text>
+<text x="1031" y="503" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">15/10/26</text>
+<rect x="1178" y="482" width="116" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1236.0" y="501" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Concluída</text>
+<line x1="311" y1="637" x2="1326" y2="637" stroke="#DFE9E4" stroke-width="1"/>
+<text x="322" y="599" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">#DOA-011</text>
+<text x="515" y="599" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">Igreja Caminhos</text>
+<text x="770" y="599" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">Roupas</text>
+<text x="1031" y="599" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">02/10/26</text>
+<rect x="1178" y="578" width="116" height="28" rx="14" fill="#FCEAEA"/>
+<text x="1236.0" y="597" font-size="12" font-weight="650" fill="#B14C4C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Recusada</text>
+<line x1="311" y1="733" x2="1326" y2="733" stroke="#DFE9E4" stroke-width="1"/>
+<text x="322" y="695" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">#DOA-008</text>
+<text x="515" y="695" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">Igreja Esperança</text>
+<text x="770" y="695" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">Higiene</text>
+<text x="1031" y="695" font-size="14" font-weight="550" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">25/09/26</text>
+<rect x="1178" y="674" width="116" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1236.0" y="693" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Concluída</text>
+<text x="294" y="876" font-size="11" font-weight="450" fill="#9AACA4" font-family="Inter, Arial, Helvetica, sans-serif">DoaES  ·  Projeto acadêmico  ·  Dados ilustrativos</text>
+</svg>

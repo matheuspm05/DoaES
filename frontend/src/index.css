@@ -1,0 +1,7 @@
+/* Os estilos e tokens compartilhados ficam em App.css. */
+html {
+  scroll-behavior: smooth;
+}
+#root {
+  min-height: 100svh;
+}

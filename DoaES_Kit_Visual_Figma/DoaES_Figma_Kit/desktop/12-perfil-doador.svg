@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<title>DoaES UI design</title>
+<rect x="0" y="0" width="1440" height="900" rx="0" fill="#F6F9F7"/>
+<rect x="0" y="0" width="248" height="900" rx="0" fill="#FFFFFF"/>
+<line x1="248" y1="0" x2="248" y2="900" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="28" y="32" width="39" height="39" rx="12" fill="#0E826C"/>
+<path d="M 38 51 C 29 37 53 35 47.5 49 C 43 36 68 38 57 51 L 48 61 Z" fill="#FFFFFF"/>
+<text x="78" y="60" font-size="27" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">doa</text>
+<text x="128" y="60" font-size="27" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">ES</text>
+<text x="31" y="120" font-size="10" font-weight="750" fill="#92A59F" letter-spacing="1.2" font-family="Inter, Arial, Helvetica, sans-serif">MENU PRINCIPAL</text>
+<rect x="32" y="140" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="154" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Visão geral</text>
+<rect x="32" y="199" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="213" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Explorar igrejas</text>
+<rect x="32" y="258" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="272" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Campanhas</text>
+<rect x="32" y="317" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="331" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Nova doação</text>
+<rect x="32" y="376" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="390" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Acompanhar</text>
+<rect x="32" y="435" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="449" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Histórico</text>
+<rect x="32" y="494" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="508" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Meu perfil</text>
+<rect x="17" y="765" width="214" height="109" rx="14" fill="#EAF3EE"/>
+<text x="34" y="796" font-size="12" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">DoaES • MVP acadêmico</text>
+<text x="34" y="819" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Intermediamos doações.</text>
+<text x="34" y="839" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Não realizamos transporte.</text>
+<rect x="248" y="0" width="1192" height="88" rx="0" fill="#FFFFFF"/>
+<line x1="248" y1="88" x2="1440" y2="88" stroke="#DFE9E4" stroke-width="1"/>
+<text x="293" y="53" font-size="14" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">DoaES   /   Doador</text>
+<rect x="1029" y="21" width="250" height="46" rx="12" fill="#F6F9F7"/>
+<text x="1050" y="50" font-size="14" font-weight="400" fill="#9AACA4" font-family="Inter, Arial, Helvetica, sans-serif">Buscar no sistema...</text>
+<circle cx="1358" cy="45" r="21" fill="#D9F3E9" opacity="1"/>
+<text x="1358" y="50" font-size="15" font-weight="700" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">M</text>
+<text x="294" y="146" font-size="31" font-weight="750" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Perfil do doador</text>
+<text x="294" y="178" font-size="15" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Gestão simples e transparente de doações na sua região.</text>
+<rect x="294" y="219" width="1050" height="598" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="324" y="273" font-size="22" font-weight="730" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Informações pessoais</text>
+<circle cx="1248" cy="261" r="28" fill="#D9F3E9" opacity="1"/>
+<text x="1248" y="268" font-size="16" font-weight="700" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">AS</text>
+<text x="323" y="341" font-size="13" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Nome completo</text>
+<rect x="323" y="351" width="465" height="48" rx="10" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="338" y="380" font-size="14" font-weight="450" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">Ana Silva</text>
+<text x="818" y="341" font-size="13" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">E-mail</text>
+<rect x="818" y="351" width="465" height="48" rx="10" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="833" y="380" font-size="14" font-weight="450" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">ana@email.com</text>
+<text x="323" y="457" font-size="13" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Cidade</text>
+<rect x="323" y="467" width="465" height="48" rx="10" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="338" y="496" font-size="14" font-weight="450" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">Vila Velha</text>
+<text x="818" y="457" font-size="13" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Telefone</text>
+<rect x="818" y="467" width="465" height="48" rx="10" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="833" y="496" font-size="14" font-weight="450" fill="#182D29" font-family="Inter, Arial, Helvetica, sans-serif">(27) 99999-9999</text>
+<text x="323" y="615" font-size="19" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Privacidade e segurança</text>
+<text x="323" y="651" font-size="14" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Seu endereço é privado e aparece apenas para a igreja</text>
+<text x="323" y="676" font-size="14" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">responsável por uma coleta autorizada.</text>
+<rect x="1056" y="736" width="251" height="48" rx="12" fill="#0E826C"/>
+<text x="1181.5" y="765.0" font-size="15" font-weight="650" fill="#FFFFFF" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Salvar alterações</text>
+<text x="294" y="876" font-size="11" font-weight="450" fill="#9AACA4" font-family="Inter, Arial, Helvetica, sans-serif">DoaES  ·  Projeto acadêmico  ·  Dados ilustrativos</text>
+</svg>

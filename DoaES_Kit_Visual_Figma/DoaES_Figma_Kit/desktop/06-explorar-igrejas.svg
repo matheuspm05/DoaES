@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<title>DoaES UI design</title>
+<rect x="0" y="0" width="1440" height="900" rx="0" fill="#F6F9F7"/>
+<rect x="0" y="0" width="248" height="900" rx="0" fill="#FFFFFF"/>
+<line x1="248" y1="0" x2="248" y2="900" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="28" y="32" width="39" height="39" rx="12" fill="#0E826C"/>
+<path d="M 38 51 C 29 37 53 35 47.5 49 C 43 36 68 38 57 51 L 48 61 Z" fill="#FFFFFF"/>
+<text x="78" y="60" font-size="27" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">doa</text>
+<text x="128" y="60" font-size="27" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">ES</text>
+<text x="31" y="120" font-size="10" font-weight="750" fill="#92A59F" letter-spacing="1.2" font-family="Inter, Arial, Helvetica, sans-serif">MENU PRINCIPAL</text>
+<rect x="32" y="140" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="154" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Visão geral</text>
+<rect x="32" y="199" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="213" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Explorar igrejas</text>
+<rect x="32" y="258" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="272" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Campanhas</text>
+<rect x="32" y="317" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="331" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Nova doação</text>
+<rect x="32" y="376" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="390" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Acompanhar</text>
+<rect x="32" y="435" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="449" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Histórico</text>
+<rect x="32" y="494" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="508" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Meu perfil</text>
+<rect x="17" y="765" width="214" height="109" rx="14" fill="#EAF3EE"/>
+<text x="34" y="796" font-size="12" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">DoaES • MVP acadêmico</text>
+<text x="34" y="819" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Intermediamos doações.</text>
+<text x="34" y="839" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Não realizamos transporte.</text>
+<rect x="248" y="0" width="1192" height="88" rx="0" fill="#FFFFFF"/>
+<line x1="248" y1="88" x2="1440" y2="88" stroke="#DFE9E4" stroke-width="1"/>
+<text x="293" y="53" font-size="14" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">DoaES   /   Doador</text>
+<rect x="1029" y="21" width="250" height="46" rx="12" fill="#F6F9F7"/>
+<text x="1050" y="50" font-size="14" font-weight="400" fill="#9AACA4" font-family="Inter, Arial, Helvetica, sans-serif">Buscar no sistema...</text>
+<circle cx="1358" cy="45" r="21" fill="#D9F3E9" opacity="1"/>
+<text x="1358" y="50" font-size="15" font-weight="700" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">M</text>
+<text x="294" y="146" font-size="31" font-weight="750" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Explorar igrejas</text>
+<text x="294" y="178" font-size="15" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Gestão simples e transparente de doações na sua região.</text>
+<text x="294" y="237" font-size="13" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Buscar instituições</text>
+<rect x="294" y="247" width="613" height="48" rx="10" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="309" y="276" font-size="14" font-weight="450" fill="#94A49E" font-family="Inter, Arial, Helvetica, sans-serif">Nome ou bairro</text>
+<text x="938" y="237" font-size="13" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Cidade</text>
+<rect x="937" y="248" width="110" height="28" rx="14" fill="#D9F3E9"/>
+<text x="992.0" y="267" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Todas</text>
+<rect x="1056" y="248" width="127" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1119.5" y="267" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Vila Velha</text>
+<rect x="1193" y="248" width="110" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1248.0" y="267" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Vitória</text>
+<text x="294" y="350" font-size="21" font-weight="720" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Igrejas que recebem doações</text>
+<text x="1210" y="352" font-size="13" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">3 resultados</text>
+<rect x="294" y="385" width="330" height="379" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="311" y="401" width="297" height="157" rx="17" fill="#EDF8F1"/>
+<circle cx="533.75" cy="434" r="33" fill="#D6F2E4" opacity="1"/>
+<rect x="353" y="458" width="95" height="74" rx="10" fill="#E0B98A"/>
+<rect x="342" y="447" width="116" height="18" rx="5" fill="#B98E5B"/>
+<path d="M398 482 C366 449 363 504 400 515 C440 498 429 450 398 482" fill="#FFFFFF"/>
+<rect x="543" y="476" width="40" height="54" rx="7" fill="#A2D9BD"/>
+<rect x="532" y="465" width="62" height="15" rx="5" fill="#0E826C"/>
+<text x="313" y="597" font-size="18" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Igreja Esperança</text>
+<text x="313" y="627" font-size="13" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Vila Velha</text>
+<text x="313" y="657" font-size="12" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Roupas, itens de higiene e brinquedos.</text>
+<rect x="313" y="681" width="136" height="28" rx="14" fill="#D9F3E9"/>
+<text x="381.0" y="700" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Aceita doações</text>
+<rect x="313" y="714" width="291" height="48" rx="12" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="458.5" y="743.0" font-size="15" font-weight="650" fill="#183C36" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Ver perfil da igreja</text>
+<rect x="649" y="385" width="330" height="379" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="666" y="401" width="297" height="157" rx="17" fill="#EDF8F1"/>
+<circle cx="888.75" cy="434" r="33" fill="#D6F2E4" opacity="1"/>
+<rect x="708" y="458" width="95" height="74" rx="10" fill="#E0B98A"/>
+<rect x="697" y="447" width="116" height="18" rx="5" fill="#B98E5B"/>
+<path d="M753 482 C721 449 718 504 755 515 C795 498 784 450 753 482" fill="#FFFFFF"/>
+<rect x="898" y="476" width="40" height="54" rx="7" fill="#A2D9BD"/>
+<rect x="887" y="465" width="62" height="15" rx="5" fill="#0E826C"/>
+<text x="668" y="597" font-size="18" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Comunidade Vida Nova</text>
+<text x="668" y="627" font-size="13" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Vitória</text>
+<text x="668" y="657" font-size="12" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Campanhas de alimentos não perecíveis.</text>
+<rect x="668" y="681" width="136" height="28" rx="14" fill="#D9F3E9"/>
+<text x="736.0" y="700" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Aceita doações</text>
+<rect x="668" y="714" width="291" height="48" rx="12" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="813.5" y="743.0" font-size="15" font-weight="650" fill="#183C36" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Ver perfil da igreja</text>
+<rect x="1004" y="385" width="330" height="379" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="1021" y="401" width="297" height="157" rx="17" fill="#EDF8F1"/>
+<circle cx="1243.75" cy="434" r="33" fill="#D6F2E4" opacity="1"/>
+<rect x="1063" y="458" width="95" height="74" rx="10" fill="#E0B98A"/>
+<rect x="1052" y="447" width="116" height="18" rx="5" fill="#B98E5B"/>
+<path d="M1108 482 C1076 449 1073 504 1110 515 C1150 498 1139 450 1108 482" fill="#FFFFFF"/>
+<rect x="1253" y="476" width="40" height="54" rx="7" fill="#A2D9BD"/>
+<rect x="1242" y="465" width="62" height="15" rx="5" fill="#0E826C"/>
+<text x="1023" y="597" font-size="18" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Igreja Caminhos</text>
+<text x="1023" y="627" font-size="13" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Vila Velha</text>
+<text x="1023" y="657" font-size="12" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Ações sociais no município.</text>
+<rect x="1023" y="681" width="136" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1091.0" y="700" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Aceita doações</text>
+<rect x="1023" y="714" width="291" height="48" rx="12" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="1168.5" y="743.0" font-size="15" font-weight="650" fill="#183C36" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Ver perfil da igreja</text>
+<text x="294" y="876" font-size="11" font-weight="450" fill="#9AACA4" font-family="Inter, Arial, Helvetica, sans-serif">DoaES  ·  Projeto acadêmico  ·  Dados ilustrativos</text>
+</svg>

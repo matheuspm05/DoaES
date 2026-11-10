@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+<title>DoaES UI design</title>
+<rect x="0" y="0" width="390" height="844" rx="0" fill="#F6F9F7"/>
+<rect x="0" y="0" width="390" height="85" rx="0" fill="#FFFFFF"/>
+<rect x="20" y="36.28" width="28.08" height="28.08" rx="8.64" fill="#0E826C"/>
+<path d="M 27.2 49.96 C 20.72 39.88 38.0 38.44 34.04 48.52 C 30.799999999999997 39.16 48.8 40.6 40.879999999999995 49.96 L 34.4 57.16 Z" fill="#FFFFFF"/>
+<text x="56.0" y="56.44" font-size="19.439999999999998" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">doa</text>
+<text x="92.0" y="56.44" font-size="19.439999999999998" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">ES</text>
+<line x1="342" y1="34" x2="363" y2="34" stroke="#183C36" stroke-width="3"/>
+<line x1="342" y1="43" x2="363" y2="43" stroke="#183C36" stroke-width="3"/>
+<line x1="342" y1="52" x2="363" y2="52" stroke="#183C36" stroke-width="3"/>
+<rect x="0" y="783" width="390" height="61" rx="0" fill="#FFFFFF"/>
+<line x1="0" y1="783" x2="390" y2="783" stroke="#DFE9E4" stroke-width="1"/>
+<text x="38" y="820" font-size="13" font-weight="600" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">Início</text>
+<text x="146" y="820" font-size="13" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Explorar</text>
+<text x="273" y="820" font-size="13" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Perfil</text>
+<rect x="18" y="119" width="228" height="28" rx="14" fill="#D9F3E9"/>
+<text x="132.0" y="138" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">DOAÇÕES QUE TRANSFORMAM</text>
+<text x="19" y="188" font-size="35" font-weight="790" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Um pequeno gesto.</text>
+<text x="19" y="230" font-size="35" font-weight="790" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Uma grande</text>
+<text x="19" y="271" font-size="35" font-weight="790" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">diferença.</text>
+<text x="20" y="312" font-size="14" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Conectamos doadores a igrejas</text>
+<text x="20" y="336" font-size="14" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">que fazem ação social na região.</text>
+<rect x="19" y="389" width="350" height="48" rx="12" fill="#0E826C"/>
+<text x="194.0" y="418.0" font-size="15" font-weight="650" fill="#FFFFFF" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Quero fazer uma doação</text>
+<rect x="19" y="458" width="350" height="197" rx="17" fill="#EDF8F1"/>
+<circle cx="281.5" cy="491" r="33" fill="#D6F2E4" opacity="1"/>
+<rect x="61" y="515" width="95" height="74" rx="10" fill="#E0B98A"/>
+<rect x="50" y="504" width="116" height="18" rx="5" fill="#B98E5B"/>
+<path d="M106 539 C74 506 71 561 108 572 C148 555 137 507 106 539" fill="#FFFFFF"/>
+<rect x="304" y="533" width="40" height="54" rx="7" fill="#A2D9BD"/>
+<rect x="293" y="522" width="62" height="15" rx="5" fill="#0E826C"/>
+<text x="18" y="703" font-size="19" font-weight="720" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Comece em três passos</text>
+<text x="18" y="732" font-size="14" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Encontre • Cadastre • Combine</text>
+</svg>

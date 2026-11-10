@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<title>DoaES UI design</title>
+<rect x="0" y="0" width="1440" height="900" rx="0" fill="#F6F9F7"/>
+<rect x="0" y="0" width="1440" height="90" rx="0" fill="#FFFFFF"/>
+<line x1="0" y1="90" x2="1440" y2="90" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="75" y="31" width="39" height="39" rx="12" fill="#0E826C"/>
+<path d="M 85 50 C 76 36 100 34 94.5 48 C 90 35 115 37 104 50 L 95 60 Z" fill="#FFFFFF"/>
+<text x="125" y="59" font-size="27" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">doa</text>
+<text x="175" y="59" font-size="27" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">ES</text>
+<text x="755" y="54" font-size="15" font-weight="550" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Como funciona</text>
+<text x="913" y="54" font-size="15" font-weight="550" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Explorar igrejas</text>
+<text x="1079" y="54" font-size="15" font-weight="550" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Campanhas</text>
+<rect x="1245" y="20" width="120" height="48" rx="12" fill="#0E826C"/>
+<text x="1305.0" y="49.0" font-size="15" font-weight="650" fill="#FFFFFF" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Entrar</text>
+<rect x="0" y="91" width="617" height="809" rx="0" fill="#E7F4EC"/>
+<text x="100" y="233" font-size="47" font-weight="760" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Cada doação</text>
+<text x="100" y="294" font-size="47" font-weight="760" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">é uma conexão.</text>
+<text x="105" y="349" font-size="17" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Acompanhe solicitações, conheça campanhas</text>
+<text x="105" y="379" font-size="17" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">e ajude ações sociais da sua região.</text>
+<rect x="110" y="465" width="400" height="270" rx="17" fill="#EDF8F1"/>
+<circle cx="410.0" cy="498" r="33" fill="#D6F2E4" opacity="1"/>
+<rect x="152" y="522" width="95" height="74" rx="10" fill="#E0B98A"/>
+<rect x="141" y="511" width="116" height="18" rx="5" fill="#B98E5B"/>
+<path d="M197 546 C165 513 162 568 199 579 C239 562 228 514 197 546" fill="#FFFFFF"/>
+<rect x="445" y="540" width="40" height="54" rx="7" fill="#A2D9BD"/>
+<rect x="434" y="529" width="62" height="15" rx="5" fill="#0E826C"/>
+<rect x="730" y="175" width="590" height="613" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="792" y="250" font-size="32" font-weight="750" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Bem-vindo de volta!</text>
+<text x="792" y="287" font-size="16" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Entre na sua conta DoaES.</text>
+<text x="792" y="350" font-size="13" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">E-mail</text>
+<rect x="792" y="360" width="468" height="48" rx="10" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="807" y="389" font-size="14" font-weight="450" fill="#94A49E" font-family="Inter, Arial, Helvetica, sans-serif">seuemail@exemplo.com</text>
+<text x="792" y="438" font-size="13" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Senha</text>
+<rect x="792" y="448" width="468" height="48" rx="10" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="807" y="477" font-size="14" font-weight="450" fill="#94A49E" font-family="Inter, Arial, Helvetica, sans-serif">Digite sua senha</text>
+<text x="1138" y="526" font-size="13" font-weight="600" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">Esqueceu a senha?</text>
+<rect x="792" y="558" width="468" height="48" rx="12" fill="#0E826C"/>
+<text x="1026.0" y="587.0" font-size="15" font-weight="650" fill="#FFFFFF" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Entrar na plataforma</text>
+<text x="904" y="658" font-size="14" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Ainda não tem uma conta?</text>
+<text x="1114" y="658" font-size="14" font-weight="700" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">Cadastre-se</text>
+<rect x="912" y="709" width="102" height="28" rx="14" fill="#D9F3E9"/>
+<text x="963.0" y="728" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Doador</text>
+<rect x="1025" y="709" width="102" height="28" rx="14" fill="#D9F3E9"/>
+<text x="1076.0" y="728" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Igreja</text>
+<text x="78" y="873" font-size="11" font-weight="400" fill="#91A49A" font-family="Inter, Arial, Helvetica, sans-serif">DoaES · Projeto acadêmico · Interface conceitual</text>
+</svg>

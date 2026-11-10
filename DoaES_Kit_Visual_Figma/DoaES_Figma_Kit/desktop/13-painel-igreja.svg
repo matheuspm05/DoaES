@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<title>DoaES UI design</title>
+<rect x="0" y="0" width="1440" height="900" rx="0" fill="#F6F9F7"/>
+<rect x="0" y="0" width="248" height="900" rx="0" fill="#FFFFFF"/>
+<line x1="248" y1="0" x2="248" y2="900" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="28" y="32" width="39" height="39" rx="12" fill="#0E826C"/>
+<path d="M 38 51 C 29 37 53 35 47.5 49 C 43 36 68 38 57 51 L 48 61 Z" fill="#FFFFFF"/>
+<text x="78" y="60" font-size="27" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">doa</text>
+<text x="128" y="60" font-size="27" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">ES</text>
+<text x="31" y="120" font-size="10" font-weight="750" fill="#92A59F" letter-spacing="1.2" font-family="Inter, Arial, Helvetica, sans-serif">MENU PRINCIPAL</text>
+<rect x="32" y="140" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="154" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Visão geral</text>
+<rect x="32" y="199" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="213" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Solicitações</text>
+<rect x="32" y="258" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="272" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Campanhas</text>
+<rect x="32" y="317" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="331" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Agendamento</text>
+<rect x="32" y="376" width="16" height="16" rx="5" fill="#AABCB4"/>
+<text x="60" y="390" font-size="15" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Perfil e coleta</text>
+<rect x="17" y="765" width="214" height="109" rx="14" fill="#EAF3EE"/>
+<text x="34" y="796" font-size="12" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">DoaES • MVP acadêmico</text>
+<text x="34" y="819" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Intermediamos doações.</text>
+<text x="34" y="839" font-size="12" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Não realizamos transporte.</text>
+<rect x="248" y="0" width="1192" height="88" rx="0" fill="#FFFFFF"/>
+<line x1="248" y1="88" x2="1440" y2="88" stroke="#DFE9E4" stroke-width="1"/>
+<text x="293" y="53" font-size="14" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">DoaES   /   Igreja</text>
+<rect x="1029" y="21" width="250" height="46" rx="12" fill="#F6F9F7"/>
+<text x="1050" y="50" font-size="14" font-weight="400" fill="#9AACA4" font-family="Inter, Arial, Helvetica, sans-serif">Buscar no sistema...</text>
+<circle cx="1358" cy="45" r="21" fill="#D9F3E9" opacity="1"/>
+<text x="1358" y="50" font-size="15" font-weight="700" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">I</text>
+<text x="294" y="146" font-size="31" font-weight="750" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Painel da igreja</text>
+<text x="294" y="178" font-size="15" font-weight="400" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Acompanhe as solicitações recebidas e suas campanhas.</text>
+<rect x="294" y="215" width="329" height="130" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="327" cy="248" r="16" fill="#FFF1D6" opacity="1"/>
+<text x="316" y="256" font-size="22" font-weight="800" fill="#A96D13" font-family="Inter, Arial, Helvetica, sans-serif">•</text>
+<text x="314" y="293" font-size="29" font-weight="750" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">08</text>
+<text x="314" y="320" font-size="13" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Doações pendentes</text>
+<rect x="647" y="215" width="329" height="130" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="680" cy="248" r="16" fill="#D9F3E9" opacity="1"/>
+<text x="669" y="256" font-size="22" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">+</text>
+<text x="667" y="293" font-size="29" font-weight="750" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">14</text>
+<text x="667" y="320" font-size="13" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Recebidas no mês</text>
+<rect x="1000" y="215" width="329" height="130" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="1033" cy="248" r="16" fill="#D9F3E9" opacity="1"/>
+<text x="1022" y="256" font-size="22" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">+</text>
+<text x="1020" y="293" font-size="29" font-weight="750" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">03</text>
+<text x="1020" y="320" font-size="13" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Campanhas ativas</text>
+<rect x="294" y="376" width="675" height="430" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="320" y="421" font-size="21" font-weight="720" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Solicitações recentes</text>
+<text x="848" y="421" font-size="13" font-weight="700" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">Ver todas →</text>
+<circle cx="348" cy="476" r="23" fill="#D9F3E9" opacity="1"/>
+<text x="348" y="481" font-size="15" font-weight="730" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">A</text>
+<text x="390" y="469" font-size="15" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Ana Silva</text>
+<text x="390" y="492" font-size="12" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Roupas e brinquedos</text>
+<rect x="794" y="458" width="108" height="28" rx="14" fill="#FFF1D6"/>
+<text x="848.0" y="477" font-size="12" font-weight="650" fill="#A96D13" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Pendente</text>
+<line x1="319" y1="528" x2="943" y2="528" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="348" cy="575" r="23" fill="#D9F3E9" opacity="1"/>
+<text x="348" y="580" font-size="15" font-weight="730" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">L</text>
+<text x="390" y="568" font-size="15" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Lucas Pereira</text>
+<text x="390" y="591" font-size="12" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Alimentos</text>
+<rect x="794" y="557" width="108" height="28" rx="14" fill="#FFF1D6"/>
+<text x="848.0" y="576" font-size="12" font-weight="650" fill="#A96D13" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Pendente</text>
+<line x1="319" y1="627" x2="943" y2="627" stroke="#DFE9E4" stroke-width="1"/>
+<circle cx="348" cy="674" r="23" fill="#D9F3E9" opacity="1"/>
+<text x="348" y="679" font-size="15" font-weight="730" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">M</text>
+<text x="390" y="667" font-size="15" font-weight="650" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Mariana Costa</text>
+<text x="390" y="690" font-size="12" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Higiene</text>
+<rect x="794" y="656" width="108" height="28" rx="14" fill="#D9F3E9"/>
+<text x="848.0" y="675" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Aceita</text>
+<line x1="319" y1="726" x2="943" y2="726" stroke="#DFE9E4" stroke-width="1"/>
+<rect x="987" y="376" width="357" height="430" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="1013" y="422" font-size="20" font-weight="720" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Resumo das doações</text>
+<text x="1013" y="456" font-size="13" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Últimos 5 períodos</text>
+<rect x="1037" y="614" width="30" height="96" rx="6" fill="#D9F3E9"/>
+<text x="1052" y="736" font-size="12" font-weight="600" fill="#6B7E78" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">S1</text>
+<rect x="1095" y="564" width="30" height="146" rx="6" fill="#D9F3E9"/>
+<text x="1110" y="736" font-size="12" font-weight="600" fill="#6B7E78" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">S2</text>
+<rect x="1153" y="593" width="30" height="117" rx="6" fill="#D9F3E9"/>
+<text x="1168" y="736" font-size="12" font-weight="600" fill="#6B7E78" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">S3</text>
+<rect x="1211" y="525" width="30" height="185" rx="6" fill="#D9F3E9"/>
+<text x="1226" y="736" font-size="12" font-weight="600" fill="#6B7E78" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">S4</text>
+<rect x="1269" y="545" width="30" height="165" rx="6" fill="#0E826C"/>
+<text x="1284" y="736" font-size="12" font-weight="600" fill="#6B7E78" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">S5</text>
+<rect x="1015" y="758" width="297" height="48" rx="12" fill="#0E826C"/>
+<text x="1163.5" y="787.0" font-size="15" font-weight="650" fill="#FFFFFF" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Ver solicitações</text>
+<text x="294" y="876" font-size="11" font-weight="450" fill="#9AACA4" font-family="Inter, Arial, Helvetica, sans-serif">DoaES  ·  Projeto acadêmico  ·  Dados ilustrativos</text>
+</svg>

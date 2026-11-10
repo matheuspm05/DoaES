@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+<title>DoaES UI design</title>
+<rect x="0" y="0" width="390" height="844" rx="0" fill="#F6F9F7"/>
+<rect x="0" y="0" width="390" height="85" rx="0" fill="#FFFFFF"/>
+<rect x="20" y="36.28" width="28.08" height="28.08" rx="8.64" fill="#0E826C"/>
+<path d="M 27.2 49.96 C 20.72 39.88 38.0 38.44 34.04 48.52 C 30.799999999999997 39.16 48.8 40.6 40.879999999999995 49.96 L 34.4 57.16 Z" fill="#FFFFFF"/>
+<text x="56.0" y="56.44" font-size="19.439999999999998" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">doa</text>
+<text x="92.0" y="56.44" font-size="19.439999999999998" font-weight="800" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">ES</text>
+<line x1="342" y1="34" x2="363" y2="34" stroke="#183C36" stroke-width="3"/>
+<line x1="342" y1="43" x2="363" y2="43" stroke="#183C36" stroke-width="3"/>
+<line x1="342" y1="52" x2="363" y2="52" stroke="#183C36" stroke-width="3"/>
+<text x="19" y="132" font-size="25" font-weight="750" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Solicitações recebidas</text>
+<text x="19" y="155" font-size="12" font-weight="450" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">DoaES · Igreja</text>
+<rect x="0" y="783" width="390" height="61" rx="0" fill="#FFFFFF"/>
+<line x1="0" y1="783" x2="390" y2="783" stroke="#DFE9E4" stroke-width="1"/>
+<text x="38" y="820" font-size="13" font-weight="600" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">Início</text>
+<text x="146" y="820" font-size="13" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Explorar</text>
+<text x="273" y="820" font-size="13" font-weight="500" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Perfil</text>
+<rect x="17" y="189" width="356" height="123" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="37" y="223" font-size="17" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Ana Silva</text>
+<text x="37" y="249" font-size="13" font-weight="430" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Roupas e brinquedos</text>
+<rect x="238" y="204" width="112" height="28" rx="14" fill="#FFF1D6"/>
+<text x="294.0" y="223" font-size="12" font-weight="650" fill="#A96D13" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Pendente</text>
+<text x="38" y="288" font-size="13" font-weight="680" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">Analisar solicitação →</text>
+<rect x="17" y="329" width="356" height="123" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="37" y="363" font-size="17" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Lucas Pereira</text>
+<text x="37" y="389" font-size="13" font-weight="430" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Alimentos</text>
+<rect x="238" y="344" width="112" height="28" rx="14" fill="#FFF1D6"/>
+<text x="294.0" y="363" font-size="12" font-weight="650" fill="#A96D13" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Pendente</text>
+<text x="38" y="428" font-size="13" font-weight="680" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">Analisar solicitação →</text>
+<rect x="17" y="469" width="356" height="123" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="37" y="503" font-size="17" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">Mariana Costa</text>
+<text x="37" y="529" font-size="13" font-weight="430" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Higiene</text>
+<rect x="238" y="484" width="112" height="28" rx="14" fill="#D9F3E9"/>
+<text x="294.0" y="503" font-size="12" font-weight="650" fill="#0E826C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Aceita</text>
+<text x="38" y="568" font-size="13" font-weight="680" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">Analisar solicitação →</text>
+<rect x="17" y="609" width="356" height="123" rx="18" fill="#FFFFFF" stroke="#DFE9E4" stroke-width="1"/>
+<text x="37" y="643" font-size="17" font-weight="700" fill="#183C36" font-family="Inter, Arial, Helvetica, sans-serif">José Almeida</text>
+<text x="37" y="669" font-size="13" font-weight="430" fill="#6B7E78" font-family="Inter, Arial, Helvetica, sans-serif">Roupas</text>
+<rect x="238" y="624" width="112" height="28" rx="14" fill="#FCEAEA"/>
+<text x="294.0" y="643" font-size="12" font-weight="650" fill="#B14C4C" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif">Recusada</text>
+<text x="38" y="708" font-size="13" font-weight="680" fill="#0E826C" font-family="Inter, Arial, Helvetica, sans-serif">Analisar solicitação →</text>
+</svg>
