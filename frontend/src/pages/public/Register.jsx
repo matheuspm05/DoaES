@@ -1,3 +1,4 @@
+import PasswordInput from "../../components/ui/PasswordInput";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Field, PageHead, ErrorMessage } from "../../components";
@@ -59,9 +60,8 @@ export function Register({ churchMode = false }) {
             />
           </Field>
           <Field label="Senha">
-            <input
+            <PasswordInput
               name="senha"
-              type="password"
               autoComplete="new-password"
               required
               minLength={10}
@@ -69,9 +69,8 @@ export function Register({ churchMode = false }) {
             />
           </Field>
           <Field label="Confirmar senha">
-            <input
+            <PasswordInput
               name="confirmacao_senha"
-              type="password"
               autoComplete="new-password"
               required
               minLength={10}

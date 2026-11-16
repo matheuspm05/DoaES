@@ -1,0 +1,195 @@
+// Modelo físico após createDatabase(), incluindo migrações aditivas.
+// Apenas estrutura: nenhum registro, senha, hash ou credencial exportado.
+// Limitações: DBML não representa COLLATE NOCASE nem as peculiaridades de
+// NULL em TEXT PRIMARY KEY do SQLite com total fidelidade; veja as notas.
+// INTEGER PRIMARY KEY sem AUTOINCREMENT também gera rowid no SQLite;
+// increment foi usado somente onde AUTOINCREMENT está declarado.
+// Índices automáticos sqlite_autoindex_* são representados por PK/UNIQUE,
+// preservando as restrições, sem inventar nomes explícitos para esses índices.
+// Regras só dos serviços (validade, permissões, status/transições etc.)
+// não foram acrescentadas como CHECKs inexistentes no banco.
+
+Project DoaES {
+  database_type: 'SQLite'
+  Note: 'Esquema físico, não dump de dados. FKs usam NO ACTION, sem cascatas. As tabelas mantêm os nomes reais, incluindo doadores_demo.'
+}
+
+Table agendamentos {
+  id INTEGER [pk, increment]
+  doacao_id INTEGER [not null, unique]
+  data TEXT [not null]
+  periodo TEXT [not null]
+  observacoes TEXT [null]
+  updated_at TEXT [not null, default: `strftime('%Y-%m-%dT%H:%M:%fZ','now')`]
+
+  Note: 'Cada agendamento pertence a uma doação; uma doação pode ter zero ou um agendamento (UNIQUE doacao_id).'
+}
+
+Table auth_tentativas {
+  chave TEXT [pk, note: 'SQLite permite NULL nesta TEXT PRIMARY KEY (tabela rowid), apesar da semântica usual de PK do DBML.']
+  total INTEGER [not null]
+  expira INTEGER [not null]
+
+  Note: 'Não há FK para usuarios: chave é um identificador de controle de tentativas. expira é epoch em milissegundos.'
+}
+
+Table campanhas {
+  id INTEGER [pk, increment]
+  demo_key TEXT [null, unique]
+  igreja_id INTEGER [not null]
+  titulo TEXT [not null]
+  descricao TEXT [not null]
+  categoria_id INTEGER [null]
+  ativa INTEGER [not null, default: 1]
+  created_at TEXT [not null, default: `strftime('%Y-%m-%dT%H:%M:%fZ','now')`]
+  updated_at TEXT [not null, default: `strftime('%Y-%m-%dT%H:%M:%fZ','now')`]
+
+  checks {
+    `ativa IN (0,1)`
+  }
+}
+
+Table categorias {
+  id INTEGER [pk]
+  nome TEXT [not null]
+  slug TEXT [not null, unique]
+}
+
+Table configuracao_local {
+  chave TEXT [pk, note: 'SQLite permite NULL nesta TEXT PRIMARY KEY (tabela rowid), apesar da semântica usual de PK do DBML.']
+  valor TEXT [not null]
+
+  Note: 'Configuração interna local. Nenhum valor de configuração foi exportado.'
+}
+
+Table doacoes {
+  id INTEGER [pk, increment]
+  demo_key TEXT [null, unique]
+  doador_demo_id INTEGER [not null]
+  igreja_id INTEGER [not null]
+  campanha_id INTEGER [null]
+  modalidade TEXT [not null]
+  endereco_coleta_ficticio TEXT [null]
+  status TEXT [not null, default: 'PENDENTE']
+  motivo_recusa TEXT [null]
+  created_at TEXT [not null, default: `strftime('%Y-%m-%dT%H:%M:%fZ','now')`]
+  updated_at TEXT [not null, default: `strftime('%Y-%m-%dT%H:%M:%fZ','now')`]
+
+  indexes {
+    igreja_id [name: 'doacoes_igreja']
+    doador_demo_id [name: 'doacoes_doador']
+  }
+
+  checks {
+    `modalidade IN ('COLETA','ENTREGA')`
+    `status IN ('PENDENTE','ACEITA','RECUSADA','CONCLUIDA')`
+  }
+}
+
+Table doadores_demo {
+  id INTEGER [pk]
+  nome TEXT [not null]
+  cidade TEXT [not null]
+  email TEXT [not null]
+  contato TEXT [not null, default: '']
+}
+
+Table eventos_doacao {
+  id INTEGER [pk, increment]
+  doacao_id INTEGER [not null]
+  tipo TEXT [not null]
+  descricao TEXT [not null]
+  created_at TEXT [not null, default: `strftime('%Y-%m-%dT%H:%M:%fZ','now')`]
+}
+
+Table igreja_categorias {
+  igreja_id INTEGER [not null]
+  categoria_id INTEGER [not null]
+
+  indexes {
+    (igreja_id, categoria_id) [pk]
+  }
+
+  Note: 'Associação N:N entre igrejas e categorias; cada par é único pela PK composta.'
+}
+
+Table igrejas {
+  id INTEGER [pk, increment]
+  nome TEXT [not null]
+  demo_key TEXT [null]
+  descricao TEXT [not null, default: '']
+  cidade TEXT [not null, default: 'Vila Velha']
+  bairro TEXT [not null, default: '']
+  endereco_publico_ficticio TEXT [not null, default: '']
+  oferece_coleta INTEGER [not null, default: 0]
+  area_coleta TEXT [not null, default: '']
+  condicoes_coleta TEXT [not null, default: '']
+
+  indexes {
+    demo_key [unique, name: 'igrejas_demo_key']
+  }
+}
+
+Table itens_doacao {
+  id INTEGER [pk, increment]
+  doacao_id INTEGER [not null]
+  categoria_id INTEGER [not null]
+  descricao TEXT [not null]
+  quantidade INTEGER [not null]
+  condicao TEXT [not null]
+  validade TEXT [null]
+
+  checks {
+    `quantidade > 0`
+  }
+}
+
+Table sessoes {
+  id TEXT [pk, note: 'SQLite permite NULL nesta TEXT PRIMARY KEY (tabela rowid), apesar da semântica usual de PK do DBML.']
+  usuario_id INTEGER [null]
+  csrf TEXT [not null]
+  expira INTEGER [not null]
+
+  Note: 'usuario_id pode ser NULL para sessões anônimas. Um usuário pode ter zero ou muitas sessões. expira armazena epoch em milissegundos.'
+}
+
+Table usuarios {
+  id INTEGER [pk, increment]
+  email TEXT [not null, unique, note: 'COLLATE NOCASE no SQLite; UNIQUE ignora diferenças ASCII entre maiúsculas e minúsculas.']
+  senha_hash TEXT [not null]
+  tipo TEXT [not null]
+  doador_id INTEGER [null, unique]
+  igreja_id INTEGER [null, unique]
+
+  checks {
+    `tipo IN ('DOADOR','IGREJA')`
+    `(tipo='DOADOR' AND doador_id IS NOT NULL AND igreja_id IS NULL) OR (tipo='IGREJA' AND igreja_id IS NOT NULL AND doador_id IS NULL)`
+  }
+
+  Note: 'Cada conta referencia exatamente um perfil, conforme o CHECK. Um doador ou igreja pode existir sem conta (seed/legado); cada perfil tem no máximo uma conta. email usa COLLATE NOCASE no SQLite.'
+}
+
+Table sqlite_sequence {
+  name BLOB [null, note: 'Sem tipo declarado; BLOB indica somente a afinidade SQLite.']
+  seq BLOB [null, note: 'Sem tipo declarado; BLOB indica somente a afinidade SQLite.']
+
+  Note: 'Tabela interna criada pelo SQLite para AUTOINCREMENT. name e seq não têm tipo declarado; BLOB no diagrama indica somente a afinidade SQLite resultante, não o tipo declarado. Não há PK, UNIQUE ou FK; name não é uma FK para outras tabelas.'
+}
+
+// Cardinalidades: > = N:1; - = 1:1 limitado por UNIQUE na FK.
+// FK nullable: vínculo opcional. Pais podem ter zero filhos.
+// usuarios: cada conta exige exatamente um dos dois vínculos de perfil (CHECK).
+Ref: doacoes.id - agendamentos.doacao_id [delete: no action, update: no action]
+Ref: campanhas.categoria_id > categorias.id [delete: no action, update: no action]
+Ref: campanhas.igreja_id > igrejas.id [delete: no action, update: no action]
+Ref: doacoes.campanha_id > campanhas.id [delete: no action, update: no action]
+Ref: doacoes.igreja_id > igrejas.id [delete: no action, update: no action]
+Ref: doacoes.doador_demo_id > doadores_demo.id [delete: no action, update: no action]
+Ref: eventos_doacao.doacao_id > doacoes.id [delete: no action, update: no action]
+Ref: igreja_categorias.categoria_id > categorias.id [delete: no action, update: no action]
+Ref: igreja_categorias.igreja_id > igrejas.id [delete: no action, update: no action]
+Ref: itens_doacao.categoria_id > categorias.id [delete: no action, update: no action]
+Ref: itens_doacao.doacao_id > doacoes.id [delete: no action, update: no action]
+Ref: sessoes.usuario_id > usuarios.id [delete: no action, update: no action]
+Ref: igrejas.id - usuarios.igreja_id [delete: no action, update: no action]
+Ref: doadores_demo.id - usuarios.doador_id [delete: no action, update: no action]

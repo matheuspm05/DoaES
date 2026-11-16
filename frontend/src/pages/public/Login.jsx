@@ -1,3 +1,4 @@
+import PasswordInput from "../../components/ui/PasswordInput";
 import { useState } from "react";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import { DonationArt, Field, Button, ErrorMessage } from "../../components";
@@ -52,8 +53,7 @@ export function Login() {
           />
         </Field>
         <Field label="Senha">
-          <input
-            type="password"
+          <PasswordInput
             name="senha"
             autoComplete="current-password"
             required
