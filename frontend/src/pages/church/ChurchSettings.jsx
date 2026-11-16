@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Save, Church } from "lucide-react";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 import { churchesApi } from "../../services/api/churches";
 import { Button, PageHead, Field, ErrorMessage } from "../../components/index";
 
 export function ChurchSettings() {
-  const { church, categories, reload, notify } = useDemo();
+  const { church, categories, reload, notify } = useAuth();
   const [form, setForm] = useState({
       ...church,
       categorias: church.categorias.map((c) => c.id),
@@ -38,7 +38,7 @@ export function ChurchSettings() {
       <PageHead
         eyebrow="INSTITUIÇÃO FICTÍCIA"
         title="Perfil e condições de coleta"
-        description="Defina como esta igreja demo recebe doações. As alterações são persistidas no SQLite."
+        description="Defina como esta igreja recebe doações. As alterações são persistidas no SQLite."
       />
       <form className="card form-card settings-form" onSubmit={save}>
         <div className="profile-heading">

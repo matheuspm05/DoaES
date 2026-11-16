@@ -16,18 +16,12 @@ export function seed(db) {
         )
         .run(i + 1, nome, slug),
     );
-    db.prepare("INSERT OR IGNORE INTO doadores_demo VALUES (?,?,?,?)").run(
-      1,
-      "Ana Demo",
-      "Vila Velha",
-      "ana@exemplo.invalid",
-    );
-    db.prepare("INSERT OR IGNORE INTO doadores_demo VALUES (?,?,?,?)").run(
-      2,
-      "Lucas Demo",
-      "Vitória",
-      "lucas@exemplo.invalid",
-    );
+    db.prepare(
+      "INSERT OR IGNORE INTO doadores_demo (id,nome,cidade,email) VALUES (?,?,?,?)",
+    ).run(1, "Ana Demo", "Vila Velha", "ana@exemplo.invalid");
+    db.prepare(
+      "INSERT OR IGNORE INTO doadores_demo (id,nome,cidade,email) VALUES (?,?,?,?)",
+    ).run(2, "Lucas Demo", "Vitória", "lucas@exemplo.invalid");
     const churches = [
       [
         "esperanca",

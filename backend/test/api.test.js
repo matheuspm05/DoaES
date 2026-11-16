@@ -1,3 +1,4 @@
+import { fixtureAccounts, actors } from "../../test/support/auth.js";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { mkdtempSync, rmSync } from "node:fs";
@@ -14,6 +15,7 @@ test("API demo: integridade, persistência e ciclo completo", async (t) => {
   const filename = join(folder, "test.sqlite");
   let db = createDatabase(filename);
   seed(db);
+  const password = await fixtureAccounts(db);
   let server;
   t.after(async () => {
     if (server) await new Promise((resolve) => server.close(resolve));
@@ -23,14 +25,7 @@ test("API demo: integridade, persistência e ciclo completo", async (t) => {
   server = createApp(db).listen(0, "127.0.0.1");
   await new Promise((resolve) => server.once("listening", resolve));
   const base = `http://127.0.0.1:${server.address().port}/api`;
-  async function request(path, method = "GET", body) {
-    const res = await fetch(base + path, {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: body ? JSON.stringify(body) : undefined,
-    });
-    return { status: res.status, body: await res.json() };
-  }
+  const request = await actors(db, base, password);
   const churches = (await request("/igrejas")).body;
   const first = churches.find((c) => c.demo_key === "esperanca"),
     noPickup = churches.find((c) => !c.oferece_coleta);
@@ -54,7 +49,7 @@ test("API demo: integridade, persistência e ciclo completo", async (t) => {
       assert.equal(churches.length, 3);
       assert.equal((await request("/campanhas")).body.length, 4);
       assert.equal((await request("/categorias")).body.length, 4);
-      assert.equal((await request("/doadores-demo")).body.length, 2);
+      assert.equal((await request("/doadores-demo")).status, 404);
       assert.equal(db.prepare("PRAGMA foreign_keys").get().foreign_keys, 1);
       assert.deepEqual(
         new Set((await request("/doacoes")).body.map((d) => d.status)),
@@ -148,7 +143,7 @@ test("API demo: integridade, persistência e ciclo completo", async (t) => {
             doador_demo_id: 999,
           })
         ).status,
-        404,
+        403,
       );
       assert.equal(
         (await request("/doacoes", "POST", { ...payload(), itens: [null] }))

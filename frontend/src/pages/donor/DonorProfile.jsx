@@ -1,26 +1,28 @@
+import { request } from "../../services/http";
 import { useState } from "react";
 import { Save, UserRound, ShieldCheck } from "lucide-react";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 import { Button, PageHead, Field } from "../../components/index";
 
 export function DonorProfile() {
-  const { donor, notify } = useDemo();
-  const [profile, setProfile] = useState(() => {
-    try {
-      return (
-        JSON.parse(localStorage.getItem(`doaes.profile.${donor.id}`)) || donor
-      );
-    } catch {
-      return donor;
-    }
-  });
+  const { donor, notify, reload } = useAuth();
+  const [profile, setProfile] = useState(donor);
+  const [error, setError] = useState(""),
+    [busy, setBusy] = useState(false);
   const update = (k, v) => setProfile({ ...profile, [k]: v });
-  function save(e) {
+  async function save(e) {
     e.preventDefault();
-    localStorage.setItem(`doaes.profile.${donor.id}`, JSON.stringify(profile));
-    notify(
-      "Informações fictícias salvas somente neste navegador. O perfil demo da API permanece predefinido.",
-    );
+    setBusy(true);
+    setError("");
+    try {
+      await request("/auth/profile", { method: "PATCH", body: profile });
+      await reload();
+      notify("Perfil salvo.");
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setBusy(false);
+    }
   }
   return (
     <>
@@ -37,9 +39,7 @@ export function DonorProfile() {
             </span>
             <div>
               <h2>{donor.nome}</h2>
-              <span className="badge status-aceita">
-                Perfil fictício · Doador
-              </span>
+              <span className="badge status-aceita">Doador</span>
             </div>
           </div>
           <div className="form-grid">
@@ -78,9 +78,10 @@ export function DonorProfile() {
               />
             </Field>
           </div>
-          <Button type="submit">
+          <p role="alert">{error}</p>
+          <Button type="submit" disabled={busy}>
             <Save size={17} />
-            Salvar alterações locais
+            Salvar alterações
           </Button>
         </form>
         <aside className="notice profile-notice">
@@ -88,11 +89,10 @@ export function DonorProfile() {
           <h2>Um espaço para experimentar.</h2>
           <p>
             Seu perfil é fictício. As alterações deste formulário ficam no
-            armazenamento local do navegador, sem criar uma conta.
+            SQLite, vinculadas à sua conta.
           </p>
           <p>
-            O acesso demo não oferece autenticação nem proteção de dados
-            pessoais. Não informe dados reais.
+            Este é um projeto acadêmico. Utilize apenas informações fictícias.
           </p>
         </aside>
       </div>

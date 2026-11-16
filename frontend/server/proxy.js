@@ -2,11 +2,11 @@ const MAX_BODY_BYTES = 100 * 1024;
 const MAX_RESPONSE_BYTES = 2 * 1024 * 1024;
 const TIMEOUT_MS = 95000;
 const readRoutes =
-  /^(health|categorias|doadores-demo|igrejas(?:\/[1-9]\d*)?|campanhas(?:\/[1-9]\d*)?|doacoes(?:\/[1-9]\d*)?)$/;
+  /^(health|auth\/(?:me)|categorias|igrejas(?:\/[1-9]\d*)?|campanhas(?:\/[1-9]\d*)?|doacoes(?:\/[1-9]\d*)?)$/;
 const writeRoutes = {
-  POST: /^(campanhas|doacoes)$/,
+  POST: /^(auth\/(register|login|logout)|campanhas|doacoes)$/,
   PATCH:
-    /^(igrejas\/[1-9]\d*|campanhas\/[1-9]\d*|doacoes\/[1-9]\d*\/(decisao|agendamento|concluir))$/,
+    /^(auth\/profile|igrejas\/[1-9]\d*|campanhas\/[1-9]\d*|doacoes\/[1-9]\d*\/(decisao|agendamento|concluir))$/,
 };
 
 class ProxyError extends Error {
@@ -184,13 +184,27 @@ export function createProxyHandler({
       validateOrigin(req, config.allowedOrigins);
       const target = getTarget(req, config.upstream);
       const body = await bodyFor(req);
-      // Não repassa cookies, Authorization, Host, cabeçalhos de proxy ou chave enviada pelo visitante.
+      // Encaminha somente cookie de sessão e CSRF; a chave vem do ambiente privado.
       const response = await fetchImpl(target, {
         method: req.method,
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
           "X-Doaes-Key": config.key,
+          ...(req.headers.cookie
+            ? {
+                Cookie: req.headers.cookie
+                  .split(";")
+                  .map((v) => v.trim())
+                  .filter((v) =>
+                    /^doaes\.sid=[a-f0-9]{64}\.[a-f0-9]{64}$/.test(v),
+                  )
+                  .join("; "),
+              }
+            : {}),
+          ...(req.headers["x-csrf-token"]
+            ? { "X-CSRF-Token": req.headers["x-csrf-token"] }
+            : {}),
         },
         body,
         redirect: "manual",
@@ -225,6 +239,12 @@ export function createProxyHandler({
       } catch {
         throw new ProxyError(502, "A API não respondeu corretamente.");
       }
+      const cookies = response.headers.getSetCookie();
+      if (cookies.length)
+        res.setHeader(
+          "Set-Cookie",
+          cookies.map((cookie) => cookie.replace(/;\s*Domain=[^;]+/gi, "")),
+        );
       const retry = response.headers.get("retry-after");
       if (retry && /^\d{1,5}$/.test(retry)) res.setHeader("Retry-After", retry);
       send(res, response.status, data);

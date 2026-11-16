@@ -5,10 +5,10 @@ import {
   SearchField,
   Empty,
 } from "../../components/index";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 
 export function Campaigns() {
-  const { campaigns, categories } = useDemo();
+  const { campaigns, categories } = useAuth();
   const [search, setSearch] = useState(""),
     [active, setActive] = useState("true"),
     [category, setCategory] = useState("");

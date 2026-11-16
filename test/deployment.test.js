@@ -1,3 +1,6 @@
+import { DatabaseSync } from "node:sqlite";
+import { browserLogin } from "./support/browser.js";
+import { fixtureAccounts, actors, client } from "./support/auth.js";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createServer } from "node:http";
@@ -28,6 +31,7 @@ const production = () =>
   readConfig({
     NODE_ENV: "production",
     DEMO_API_KEY: key,
+    SESSION_SECRET: key,
     ALLOWED_ORIGINS: origin,
   });
 async function listen(server) {
@@ -61,12 +65,17 @@ test("configuração de produção falha de forma fechada e aceita PORT do Rende
     () => readConfig({ NODE_ENV: "production", DEMO_API_KEY: "curta" }),
     /DEMO_API_KEY/,
   );
+  assert.throws(
+    () => readConfig({ NODE_ENV: "production", DEMO_API_KEY: key }),
+    /SESSION_SECRET/,
+  );
   assert.throws(() => readConfig({ PORT: "abc" }), /PORT/);
   assert.throws(
     () =>
       readConfig({
         NODE_ENV: "production",
         DEMO_API_KEY: key,
+        SESSION_SECRET: key,
         ALLOWED_ORIGINS: "http://inseguro.example",
       }),
     /HTTPS/,
@@ -79,6 +88,7 @@ test("configuração de produção falha de forma fechada e aceita PORT do Rende
     NODE_ENV: "production",
     PORT: "10000",
     DEMO_API_KEY: key,
+    SESSION_SECRET: key,
   });
   assert.equal(config.port, 10000);
   assert.equal(config.host, "0.0.0.0");
@@ -173,12 +183,14 @@ test("proxy Vercel → API Render: ciclo completo, filtros e restrições sem se
   seed(db);
   const backend = createServer(createApp(db, production()));
   const upstream = await listen(backend);
+  const password = await fixtureAccounts(db);
   const received = [];
   const proxy = createProxyHandler({
     env: {
       NODE_ENV: "test",
       RENDER_API_URL: upstream,
       DEMO_API_KEY: key,
+      SESSION_SECRET: key,
       ALLOWED_ORIGINS: origin,
     },
     fetchImpl: (url, options) => {
@@ -193,11 +205,14 @@ test("proxy Vercel → API Render: ciclo completo, filtros e restrições sem se
     await close(backend);
     db.close();
   });
+  const actorCall = await actors(db, site + "/api", password, {
+    Origin: origin,
+  });
   const call = (path, method = "GET", body, extra = {}) =>
-    json(site + path, method, body, { Origin: origin, ...extra });
+    actorCall(path.replace("/api", ""), method, body, extra);
   assert.equal((await call("/api/proxy?path=igrejas")).body.length, 3);
   assert.equal((await call("/api/categorias")).body.length, 4);
-  assert.equal((await call("/api/doadores-demo")).body.length, 2);
+  assert.equal((await call("/api/doadores-demo")).status, 404);
   assert.equal(
     (await call("/api/campanhas?igreja_id=1&ativa=true")).body.length,
     2,
@@ -242,7 +257,7 @@ test("proxy Vercel → API Render: ciclo completo, filtros e restrições sem se
   );
   const created = await call("/api/doacoes", "POST", payload, {
     "X-Doaes-Key": "chave-injetada-pelo-visitante",
-    Cookie: "nao-repassar=1",
+
     Authorization: "Bearer nao-repassar",
   });
   assert.equal(created.status, 201);
@@ -305,7 +320,7 @@ test("proxy Vercel → API Render: ciclo completo, filtros e restrições sem se
     received.every(
       (headers) =>
         headers["X-Doaes-Key"] === key &&
-        !headers.Cookie &&
+        (!headers.Cookie || headers.Cookie.startsWith("doaes.sid=")) &&
         !headers.Authorization &&
         !headers.Origin,
     ),
@@ -372,6 +387,7 @@ test("proxy fecha sem configuração e trata timeout, redirecionamento e cold st
         NODE_ENV: "production",
         RENDER_API_URL: "http://inseguro.example",
         DEMO_API_KEY: key,
+        SESSION_SECRET: key,
         ALLOWED_ORIGINS: origin,
       },
       status: 503,
@@ -403,6 +419,7 @@ test("proxy fecha sem configuração e trata timeout, redirecionamento e cold st
     const env = item.env ?? {
       RENDER_API_URL: "https://api.example",
       DEMO_API_KEY: key,
+      SESSION_SECRET: key,
       ALLOWED_ORIGINS: origin,
     };
     const server = createServer(
@@ -439,6 +456,7 @@ test("server.js usa PORT/0.0.0.0, seed automático e SQLite efêmero sem apagar 
         NODE_ENV: "production",
         PORT: port,
         DEMO_API_KEY: key,
+        SESSION_SECRET: key,
         SQLITE_PATH: file,
         ALLOWED_ORIGINS: origin,
       },
@@ -474,15 +492,39 @@ test("server.js usa PORT/0.0.0.0, seed automático e SQLite efêmero sem apagar 
     });
     assert.notEqual(failed.status, 0);
     assert.equal(existsSync(file), false);
+    const counts = () => {
+      const check = new DatabaseSync(file, { readOnly: true });
+      try {
+        return {
+          donations: check.prepare("SELECT count(*) n FROM doacoes").get().n,
+          users: check.prepare("SELECT count(*) n FROM usuarios").get().n,
+        };
+      } finally {
+        check.close();
+      }
+    };
     let url = await start();
+    assert.deepEqual(counts(), { donations: 6, users: 0 });
     const headers = { "X-Doaes-Key": key };
     assert.equal(
-      (await json(url + "/api/doacoes", "GET", undefined, headers)).body.length,
-      6,
+      (await json(url + "/api/doacoes", "GET", undefined, headers)).status,
+      401,
     );
+    let session = client(url + "/api", headers);
+    await session("/auth/me");
+    const registered = await session("/auth/register", "POST", {
+      tipo: "DOADOR",
+      nome: "Persistência",
+      email: "persistencia@fixture.invalid",
+      cidade: "Vila Velha",
+      senha: key,
+      confirmacao_senha: key,
+    });
+    assert.equal(registered.status, 201);
+    assert.match(registered.headers.get("set-cookie"), /; Secure/);
+    const savedCookie = registered.headers.get("set-cookie").split(";")[0];
     const payload = {
       igreja_id: 1,
-      doador_demo_id: 1,
       modalidade: "ENTREGA",
       itens: [
         {
@@ -493,23 +535,37 @@ test("server.js usa PORT/0.0.0.0, seed automático e SQLite efêmero sem apagar 
         },
       ],
     };
-    assert.equal(
-      (await json(url + "/api/doacoes", "POST", payload, headers)).status,
-      201,
-    );
+    assert.equal((await session("/doacoes", "POST", payload)).status, 201);
     await stop();
     url = await start();
+    assert.deepEqual(counts(), { donations: 7, users: 1 });
     assert.equal(
-      (await json(url + "/api/doacoes", "GET", undefined, headers)).body.length,
-      7,
+      (
+        await client(url + "/api", { ...headers, Cookie: savedCookie })(
+          "/auth/me",
+        )
+      ).body.user.tipo,
+      "DOADOR",
     );
+    assert.equal(
+      (await json(url + "/api/doacoes", "GET", undefined, headers)).status,
+      401,
+    );
+    session = client(url + "/api", headers);
+    assert.equal(
+      (await session.login("persistencia@fixture.invalid", key)).status,
+      200,
+    );
+    assert.equal((await session("/auth/me")).body.user.tipo, "DOADOR");
     await stop();
     rmSync(file);
     url = await start();
     assert.equal(
-      (await json(url + "/api/doacoes", "GET", undefined, headers)).body.length,
-      6,
+      (await json(url + "/api/doacoes", "GET", undefined, headers)).status,
+      401,
     );
+    session = client(url + "/api", headers);
+    assert.equal((await session("/auth/me")).body.user, null);
   } finally {
     await stop();
     rmSync(folder, { recursive: true, force: true });
@@ -526,6 +582,7 @@ test("build Vite de produção não inclui as credenciais do servidor", () => {
         ...process.env,
         NODE_ENV: "production",
         DEMO_API_KEY: key,
+        SESSION_SECRET: key,
         RENDER_API_URL: "https://backend-sentinel.example",
       },
       encoding: "utf8",
@@ -565,6 +622,7 @@ test("frontend compilado navega pelo proxy protegido e conclui doação sem chav
   seed(db);
   const backend = createServer(createApp(db, production()));
   const upstream = await listen(backend);
+  const password = await fixtureAccounts(db);
   const env = { NODE_ENV: "test", RENDER_API_URL: upstream, DEMO_API_KEY: key };
   const proxy = createProxyHandler({ env });
   const app = express();
@@ -584,15 +642,20 @@ test("frontend compilado navega pelo proxy protegido e conclui doação sem chav
       locale: "pt-BR",
       timezoneId: "America/Sao_Paulo",
     });
+    page.setDefaultTimeout(6000);
+
     const errors = [],
       requests = [];
-    page.on("pageerror", (error) => errors.push(error.message));
+    page.on("pageerror", (error) => {
+      errors.push(error.message);
+      console.error(error);
+    });
     page.on("request", (request) => {
       if (new URL(request.url()).pathname.startsWith("/api/"))
         requests.push(request);
     });
     await page.goto(site + "/entrar");
-    await page.getByRole("button", { name: "Entrar como doador" }).click();
+    await browserLogin(page, "doador", password);
     await page.waitForURL(/\/doador$/);
     await page.goto(site + "/doador/nova-doacao?igreja=1");
     await page
@@ -606,7 +669,7 @@ test("frontend compilado navega pelo proxy protegido e conclui doação sem chav
       await page.locator(".page-head .badge").innerText(),
       /Pendente/,
     );
-    await page.getByLabel("Perfil de demonstração").selectOption("igreja");
+    await browserLogin(page, "igreja", password);
     await page.waitForURL(/\/igreja$/);
     await page.goto(site + `/igreja/solicitacoes/${id}`);
     await page.getByRole("button", { name: "Aceitar doação" }).click();
@@ -617,7 +680,7 @@ test("frontend compilado navega pelo proxy protegido e conclui doação sem chav
     await page
       .getByRole("heading", { name: "Um gesto que chegou ao destino." })
       .waitFor();
-    await page.getByLabel("Perfil de demonstração").selectOption("doador");
+    await browserLogin(page, "doador", password);
     await page.waitForURL(/\/doador$/);
     await page.goto(site + `/doador/doacoes/${id}`);
     await page.locator(".page-head .badge").waitFor();

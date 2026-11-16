@@ -90,5 +90,26 @@ export function createDatabase(path = databasePath) {
     CREATE INDEX IF NOT EXISTS doacoes_doador ON doacoes(doador_demo_id);
     CREATE INDEX IF NOT EXISTS doacoes_igreja ON doacoes(igreja_id);
   `);
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS usuarios (
+      id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL COLLATE NOCASE UNIQUE,
+      senha_hash TEXT NOT NULL, tipo TEXT NOT NULL CHECK(tipo IN ('DOADOR','IGREJA')),
+      doador_id INTEGER UNIQUE REFERENCES doadores_demo(id), igreja_id INTEGER UNIQUE REFERENCES igrejas(id),
+      CHECK((tipo='DOADOR' AND doador_id IS NOT NULL AND igreja_id IS NULL) OR
+            (tipo='IGREJA' AND igreja_id IS NOT NULL AND doador_id IS NULL))
+    );
+    CREATE TABLE IF NOT EXISTS sessoes (id TEXT PRIMARY KEY, usuario_id INTEGER REFERENCES usuarios(id), csrf TEXT NOT NULL, expira INTEGER NOT NULL);
+    CREATE TABLE IF NOT EXISTS auth_tentativas (chave TEXT PRIMARY KEY, total INTEGER NOT NULL, expira INTEGER NOT NULL);
+    CREATE TABLE IF NOT EXISTS configuracao_local (chave TEXT PRIMARY KEY, valor TEXT NOT NULL);
+  `);
+  if (
+    !db
+      .prepare("PRAGMA table_info(doadores_demo)")
+      .all()
+      .some((c) => c.name === "contato")
+  )
+    db.exec(
+      "ALTER TABLE doadores_demo ADD COLUMN contato TEXT NOT NULL DEFAULT ''",
+    );
   return db;
 }

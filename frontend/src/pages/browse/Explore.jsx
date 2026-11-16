@@ -8,10 +8,10 @@ import {
   SearchField,
   Empty,
 } from "../../components/index";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 
 export function Explore() {
-  const { churches, categories } = useDemo();
+  const { churches, categories } = useAuth();
   const [params] = useSearchParams();
   const [search, setSearch] = useState(""),
     [city, setCity] = useState(""),

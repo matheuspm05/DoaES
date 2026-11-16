@@ -1,11 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Church, Heart } from "lucide-react";
 import { Button, Empty, CategoryIcon } from "../../components/index";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 
 export function CampaignDetail() {
   const { id } = useParams();
-  const { campaigns } = useDemo();
+  const { campaigns } = useAuth();
   const c = campaigns.find((c) => c.id === Number(id));
   if (!c)
     return (

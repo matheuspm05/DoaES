@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
@@ -9,7 +9,7 @@ import {
   Heart,
   ImageOff,
 } from "lucide-react";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 import { donationsApi } from "../../services/api/donations";
 import { dayLabel, today } from "../../utils/dates";
 import { periods, statuses } from "../../constants/donations";
@@ -23,18 +23,44 @@ import {
   CategoryIcon,
 } from "../../components/index";
 
-export default function DonationDetail({
-  churchMode = false,
-  scheduling = false,
-}) {
+export default function DonationDetail(props) {
   const { id } = useParams();
-  const { donations, church, donor, reload, notify } = useDemo();
+  return <DonationDetailPage key={id} {...props} />;
+}
+function DonationDetailPage({ churchMode = false, scheduling = false }) {
+  const { id } = useParams();
+  const { donations, church, donor, reload, notify } = useAuth();
   const navigate = useNavigate();
-  const donation = donations.find(
+  const summary = donations.find(
     (d) =>
       d.id === Number(id) &&
       (churchMode ? d.igreja_id === church.id : d.doador_demo_id === donor.id),
   );
+  const [detail, setDetail] = useState(null),
+    [detailError, setDetailError] = useState("");
+  const loadDetail = () =>
+    donationsApi
+      .get(id)
+      .then((d) => {
+        setDetail(d);
+        setDetailError("");
+      })
+      .catch((e) => setDetailError(e.message));
+  useEffect(() => {
+    let active = true;
+    donationsApi
+      .get(id)
+      .then((d) => {
+        if (active) setDetail(d);
+      })
+      .catch((e) => {
+        if (active) setDetailError(e.message);
+      });
+    return () => {
+      active = false;
+    };
+  }, [id, donations]);
+  const donation = detail || summary;
   const [reason, setReason] = useState(""),
     [refusing, setRefusing] = useState(false),
     [error, setError] = useState(""),
@@ -62,11 +88,19 @@ export default function DonationDetail({
       setBusy(false);
     }
   }
+  if (detailError)
+    return (
+      <div className="card padded">
+        <ErrorMessage>{detailError}</ErrorMessage>
+        <Button onClick={loadDetail}>Tentar novamente</Button>
+      </div>
+    );
+  if (!detail && summary) return <p role="status">Carregando doação…</p>;
   if (!donation)
     return (
       <Empty
         title="Doação não encontrada neste perfil"
-        description="Selecione o doador ou a igreja destinatária corretos na barra de demonstração."
+        description="Esta doação não está disponível para sua conta."
         action={
           <Button
             to={churchMode ? "/igreja/solicitacoes" : "/doador/historico"}

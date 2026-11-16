@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 import { PageHead, Button, CampaignCard, Empty } from "../../components/index";
 
 export function ManageCampaigns() {
-  const { campaigns, church } = useDemo();
+  const { campaigns, church } = useAuth();
   const [filter, setFilter] = useState("");
   const mine = campaigns.filter(
     (c) => c.igreja_id === church.id && (!filter || String(c.ativa) === filter),
@@ -46,9 +46,7 @@ export function ManageCampaigns() {
         <Empty
           title="Toda campanha começa com uma ideia"
           description="Crie uma campanha para representar as necessidades desta igreja fictícia."
-          action={
-            <Button to="/igreja/campanhas/nova">Criar campanha demo</Button>
-          }
+          action={<Button to="/igreja/campanhas/nova">Criar campanha</Button>}
         />
       )}
     </>

@@ -15,11 +15,11 @@ import {
   SectionHead,
   CategoryIcon,
 } from "../../components/index";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 
 export function ChurchDetail() {
   const { id } = useParams();
-  const { churches, campaigns } = useDemo();
+  const { churches, campaigns } = useAuth();
   const church = churches.find((c) => c.id === Number(id));
   if (!church)
     return (

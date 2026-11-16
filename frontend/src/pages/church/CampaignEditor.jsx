@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, Save, Megaphone } from "lucide-react";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 import { campaignsApi } from "../../services/api/campaigns";
 import {
   PageHead,
@@ -13,7 +13,7 @@ import {
 
 export function CampaignEditor() {
   const { id } = useParams();
-  const { campaigns, church, reload, notify } = useDemo();
+  const { campaigns, church, reload, notify } = useAuth();
   const navigate = useNavigate();
   const existing = id
     ? campaigns.find((c) => c.id === Number(id) && c.igreja_id === church.id)

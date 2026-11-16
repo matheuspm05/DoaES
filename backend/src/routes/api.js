@@ -1,3 +1,4 @@
+import { authRoutes } from "./auth.js";
 import { Router } from "express";
 import { validateJson } from "../middleware/validateJson.js";
 import { healthRoutes } from "./health.js";
@@ -9,6 +10,7 @@ import { donationRoutes } from "./donations.js";
 export function apiRoutes(db) {
   const router = Router();
   router.use(validateJson);
+  router.use("/auth", authRoutes(db));
   router.use("/health", healthRoutes());
   router.use(catalogRoutes(db));
   router.use("/igrejas", churchRoutes(db));

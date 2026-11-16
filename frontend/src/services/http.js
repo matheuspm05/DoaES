@@ -1,9 +1,18 @@
+let csrfToken = "";
+export const setCsrfToken = (value) => {
+  csrfToken = value || "";
+};
 export async function request(path, options = {}) {
   let response;
   try {
     response = await fetch(`/api${path}`, {
       ...options,
-      headers: { "Content-Type": "application/json", ...options.headers },
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+        ...(csrfToken ? { "X-CSRF-Token": csrfToken } : {}),
+        ...options.headers,
+      },
       body: options.body ? JSON.stringify(options.body) : undefined,
     });
   } catch {
@@ -19,7 +28,11 @@ export async function request(path, options = {}) {
       "A API está temporariamente indisponível ou iniciando. Aguarde alguns instantes e tente novamente.",
     );
   }
-  if (!response.ok)
+  if (!response.ok) {
+    if (response.status === 401 && path !== "/auth/login")
+      window.dispatchEvent(new Event("doaes:unauthorized"));
     throw new Error(data.erro || "Não foi possível concluir a ação.");
+  }
+  if (data.csrfToken) setCsrfToken(data.csrfToken);
   return data;
 }

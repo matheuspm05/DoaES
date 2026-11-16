@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { Logo, Button } from "../components/index";
-import { useDemo } from "../contexts/demo";
+import { useAuth } from "../contexts/auth";
 
 export function PublicLayout({ children }) {
   const [open, setOpen] = useState(false);
-  const { mode } = useDemo();
+  const { mode } = useAuth();
   return (
     <>
       <a className="skip-link" href="#conteudo">
@@ -61,7 +61,7 @@ export function PublicLayout({ children }) {
           <small>Projeto acadêmico · Dados fictícios para demonstração</small>
         </p>
         <Link to="/entrar">
-          Experimentar a demonstração <ArrowRight size={15} />
+          Acessar minha conta <ArrowRight size={15} />
         </Link>
       </footer>
     </>

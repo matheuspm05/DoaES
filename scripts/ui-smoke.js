@@ -1,8 +1,12 @@
+import { newAccountsCycle } from "../test/support/new-accounts-ui.js";
+import { fixtureAccounts } from "../test/support/auth.js";
+import { browserLogin } from "../test/support/browser.js";
 import { chromium } from "playwright-core";
 import assert from "node:assert/strict";
 import { mkdirSync, existsSync } from "node:fs";
 import { createDatabase } from "../backend/src/database/index.js";
 import { seed } from "../backend/src/database/seed.js";
+import { readConfig } from "../backend/src/config.js";
 import { createApp } from "../backend/src/app.js";
 import { today } from "../backend/src/utils/dates.js";
 
@@ -18,7 +22,11 @@ if (!executablePath)
 mkdirSync("test-results", { recursive: true });
 const db = createDatabase(":memory:");
 seed(db);
-const server = createApp(db).listen(0, "127.0.0.1");
+const password = await fixtureAccounts(db);
+const server = createApp(db, { ...readConfig(), rateLimit: 10000 }).listen(
+  0,
+  "127.0.0.1",
+);
 await new Promise((resolve) => server.once("listening", resolve));
 let browser;
 const errors = [];
@@ -102,7 +110,7 @@ try {
   await visit("/cadastro/doador", /Seu próximo gesto/);
   await visit("/cadastro/igreja", /Juntos/);
   await visit("/entrar", /Cada doação/);
-  await page.getByRole("button", { name: "Entrar como doador" }).click();
+  await browserLogin(page, "doador", password);
   await page.getByRole("heading", { name: /Olá, Ana/ }).waitFor();
   const donorPages = [
     ["/doador", /Olá, Ana/],
@@ -135,15 +143,7 @@ try {
   assert.equal(await page.locator('input[type="date"]:invalid').count(), 1);
   assert.match(await page.locator(".step-pill").innerText(), /ETAPA 1/);
   await page.getByLabel("Validade do alimento").fill("2028-12-31");
-  await page.getByLabel("Fotos demonstrativas").setInputFiles({
-    name: "foto-demo.png",
-    mimeType: "image/png",
-    buffer: Buffer.from(
-      "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jV1sAAAAASUVORK5CYII=",
-      "base64",
-    ),
-  });
-  assert.equal(await page.locator(".photo-grid img").count(), 1);
+  assert.equal(await page.locator('input[type="file"]').count(), 0);
   await page.getByRole("button", { name: "Adicionar outro item" }).click();
   await page
     .getByLabel("Descrição *", { exact: true })
@@ -161,7 +161,7 @@ try {
   assert.equal(postBodies[0].itens.length, 2);
   assert.ok(!JSON.stringify(postBodies[0]).includes("foto"));
   assert.match(await page.locator(".page-head .badge").innerText(), /Pendente/);
-  await page.getByLabel("Perfil de demonstração").selectOption("igreja");
+  await browserLogin(page, "igreja", password);
   await page.waitForURL(/\/igreja$/);
   const churchPages = [
     ["/igreja", /Painel da igreja/],
@@ -186,7 +186,7 @@ try {
   await page
     .getByRole("heading", { name: "Um gesto que chegou ao destino." })
     .waitFor();
-  await page.getByLabel("Perfil de demonstração").selectOption("doador");
+  await browserLogin(page, "doador", password);
   await page.waitForURL(/\/doador$/);
   await visit(`/doador/doacoes/${donationId}`, /boas mãos/);
   assert.match(
@@ -237,7 +237,7 @@ try {
       .locator(".sidebar")
       .evaluate((el) => el.classList.contains("open"))),
   );
-  await page.getByLabel("Perfil de demonstração").selectOption("igreja");
+  await browserLogin(page, "igreja", password);
   await page.waitForURL(/\/igreja$/);
   for (const path of [
     "/igreja",
@@ -262,9 +262,10 @@ try {
       fullPage: true,
     });
   }
+  await newAccountsCycle(context, "http://localhost:5173");
   assert.deepEqual(errors, []);
   console.log(
-    `Interface verificada: ${count} visitas, desktop 1440px e mobile 375px; landing também em 320px e 768px. Ciclo completo, contato simulado, validade, coleta, fotos locais e menus móveis. Sem erros JavaScript.`,
+    `Interface verificada: ${count} visitas, desktop 1440px e mobile 375px; landing também em 320px e 768px. Ciclo completo, contato simulado, validade, coleta, fotos desabilitadas e menus móveis. Sem erros JavaScript.`,
   );
 } catch (error) {
   const page = browser?.contexts()[0]?.pages()[0];

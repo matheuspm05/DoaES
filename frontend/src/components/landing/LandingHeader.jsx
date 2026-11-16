@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import LandingBrand from "./LandingBrand";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 
 const links = [
   ["/#inicio", "Início"],
@@ -12,7 +12,7 @@ const links = [
 
 export default function LandingHeader() {
   const [open, setOpen] = useState(false);
-  const { mode } = useDemo();
+  const { mode } = useAuth();
   const { hash } = useLocation();
   const close = () => setOpen(false);
   return (

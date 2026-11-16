@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Plus } from "lucide-react";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 import {
   PageHead,
   Button,
@@ -15,7 +15,7 @@ export default function DonationHistory({
   scheduling = false,
   tracking = false,
 }) {
-  const { donations, church, donor } = useDemo();
+  const { donations, church, donor } = useAuth();
   const [params] = useSearchParams();
   const [status, setStatus] = useState(params.get("status") || "");
   const [search, setSearch] = useState("");

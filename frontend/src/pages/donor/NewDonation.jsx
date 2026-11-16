@@ -10,7 +10,7 @@ import {
   Heart,
   Check,
 } from "lucide-react";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 import { donationsApi } from "../../services/api/donations";
 import { today, dayLabel } from "../../utils/dates";
 import {
@@ -20,7 +20,6 @@ import {
   ErrorMessage,
   Empty,
 } from "../../components/index";
-import PhotoPreview from "../../components/PhotoPreview";
 
 const newItem = (cat) => ({
   key: crypto.randomUUID(),
@@ -31,7 +30,7 @@ const newItem = (cat) => ({
   validade: "",
 });
 export default function NewDonation() {
-  const { churches, campaigns, categories, donor, reload, notify } = useDemo();
+  const { churches, campaigns, categories, reload, notify } = useAuth();
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const [churchId, setChurchId] = useState(
@@ -123,7 +122,6 @@ export default function NewDonation() {
     setError("");
     try {
       const donation = await donationsApi.create({
-        doador_demo_id: donor.id,
         igreja_id: churchId,
         campanha_id: campaignId ? Number(campaignId) : null,
         modalidade: mode,
@@ -347,7 +345,9 @@ export default function NewDonation() {
               <Plus size={17} />
               Adicionar outro item
             </Button>
-            <PhotoPreview />
+            <p className="micro">
+              Upload de fotografias indisponível nesta versão.
+            </p>
           </div>
           {step === 2 && (
             <section className="review">
@@ -455,7 +455,7 @@ export default function NewDonation() {
               {mode === "COLETA" && (
                 <Field
                   label="Endereço fictício de retirada *"
-                  hint="Não informe um endereço real: não há autenticação nesta demo."
+                  hint="Use um endereço fictício neste projeto acadêmico."
                 >
                   <textarea
                     required

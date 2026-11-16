@@ -1,14 +1,32 @@
-import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, Heart, Church, ShieldCheck } from "lucide-react";
-import { DonationArt, Field } from "../../components/index";
-import { useDemo } from "../../contexts/demo";
-
+import { useState } from "react";
+import { Link, useNavigate, Navigate } from "react-router-dom";
+import { DonationArt, Field, Button, ErrorMessage } from "../../components";
+import { useAuth } from "../../contexts/auth";
 export function Login() {
-  const { churches, church, chooseChurch, chooseMode } = useDemo();
-  const navigate = useNavigate();
-  function enter(mode) {
-    chooseMode(mode);
-    navigate(mode === "igreja" ? "/igreja" : "/doador");
+  const { login, mode, authLoading } = useAuth(),
+    navigate = useNavigate();
+  const [error, setError] = useState(""),
+    [busy, setBusy] = useState(false);
+  if (authLoading)
+    return (
+      <div className="container padded" role="status">
+        Verificando sessão…
+      </div>
+    );
+  if (mode) return <Navigate to={"/" + mode} replace />;
+  async function submit(e) {
+    e.preventDefault();
+    setBusy(true);
+    setError("");
+    const b = Object.fromEntries(new FormData(e.currentTarget));
+    try {
+      const u = await login(b);
+      navigate("/" + u.tipo.toLowerCase());
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setBusy(false);
+    }
   }
   return (
     <div className="container auth-grid">
@@ -18,69 +36,42 @@ export function Login() {
           Cada doação
           <br />é uma <em>conexão.</em>
         </h1>
-        <p>Experimente os dois lados de um gesto de solidariedade.</p>
+        <p>Aproxime-se de pessoas e boas causas.</p>
         <DonationArt />
-        <span className="micro">
-          Feito para aproximar pessoas e boas causas.
-        </span>
       </section>
-      <section className="card auth-card">
-        <span className="demo-pill">
-          <i />
-          Acesso de demonstração
-        </span>
+      <form className="card auth-card" onSubmit={submit}>
         <h2>Que bom ter você aqui.</h2>
-        <p>
-          Escolha um perfil fictício para conhecer a plataforma. Você pode
-          alternar a qualquer momento.
-        </p>
-        <button className="role-card" onClick={() => enter("doador")}>
-          <span className="icon-tile">
-            <Heart />
-          </span>
-          <span>
-            <strong>Entrar como doador</strong>
-            <small>Encontre uma causa e compartilhe cuidado.</small>
-          </span>
-          <ArrowRight size={20} />
-        </button>
-        <Field label="Igreja fictícia para testar">
-          <select
-            value={church?.id || ""}
-            onChange={(e) => chooseChurch(e.target.value)}
-          >
-            {churches.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.nome}
-              </option>
-            ))}
-          </select>
+        <p>Entre com sua conta para continuar.</p>
+        <Field label="E-mail">
+          <input
+            type="email"
+            name="email"
+            autoComplete="username"
+            required
+            maxLength={150}
+          />
         </Field>
-        <button className="role-card" onClick={() => enter("igreja")}>
-          <span className="icon-tile">
-            <Church />
-          </span>
-          <span>
-            <strong>Entrar como igreja</strong>
-            <small>Gerencie campanhas e receba doações.</small>
-          </span>
-          <ArrowRight size={20} />
-        </button>
-        <div className="notice">
-          <ShieldCheck size={19} />
-          <p>
-            Sem senha e sem conta real. Este acesso simulado não oferece
-            autenticação ou privacidade de produção.
-          </p>
-        </div>
+        <Field label="Senha">
+          <input
+            type="password"
+            name="senha"
+            autoComplete="current-password"
+            required
+            maxLength={128}
+          />
+        </Field>
+        <ErrorMessage>{error}</ErrorMessage>
+        <Button type="submit" disabled={busy}>
+          {busy ? "Entrando…" : "Entrar"}
+        </Button>
         <div className="auth-links">
-          Conhecer os cadastros demonstrativos:
-          <br />
-          <Link to="/cadastro/doador">Doador</Link>
-          <span>·</span>
+          Criar conta: <Link to="/cadastro/doador">Doador</Link> ·{" "}
           <Link to="/cadastro/igreja">Igreja</Link>
         </div>
-      </section>
+        <p className="micro">
+          Projeto acadêmico. Utilize informações fictícias.
+        </p>
+      </form>
     </div>
   );
 }

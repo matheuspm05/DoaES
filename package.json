@@ -10,7 +10,8 @@
     "test": "npm --prefix backend test && npm run test:deploy",
     "lint": "npm --prefix frontend run lint",
     "test:ui": "node scripts/ui-smoke.js",
-    "test:deploy": "node --test --test-timeout=30000 test/deployment.test.js"
+    "test:deploy": "node --test --test-timeout=30000 test/deployment.test.js",
+    "seed:accounts": "node backend/src/database/seedAccounts.js"
   },
   "devDependencies": {
     "playwright-core": "^1.65.0"

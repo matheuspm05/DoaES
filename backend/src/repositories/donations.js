@@ -28,7 +28,7 @@ export const getDonation = (db, id) =>
 export function listDonations(db, filters, values) {
   return db
     .prepare(
-      `SELECT * FROM doacoes ${filters.length ? "WHERE " + filters.join(" AND ") : ""} ORDER BY id DESC`,
+      `SELECT id,doador_demo_id,igreja_id,campanha_id,modalidade,status,motivo_recusa,created_at,updated_at FROM doacoes ${filters.length ? "WHERE " + filters.join(" AND ") : ""} ORDER BY id DESC`,
     )
     .all(...values)
     .map((d) => donationDetail(db, d));

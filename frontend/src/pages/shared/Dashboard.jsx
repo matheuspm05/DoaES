@@ -16,10 +16,10 @@ import {
   DonationArt,
   Empty,
 } from "../../components/index";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 
 export default function Dashboard({ churchMode = false }) {
-  const { donations, church, donor, churches, campaigns } = useDemo();
+  const { donations, church, donor, churches, campaigns } = useAuth();
   const mine = donations.filter((d) =>
     churchMode ? d.igreja_id === church.id : d.doador_demo_id === donor.id,
   );
@@ -28,7 +28,7 @@ export default function Dashboard({ churchMode = false }) {
   const ongoing = mine.filter(
     (d) => d.status === "ACEITA" || d.status === "PENDENTE",
   );
-  const active = campaigns.filter((c) => c.igreja_id === church.id && c.ativa);
+  const active = campaigns.filter((c) => c.igreja_id === church?.id && c.ativa);
   const stats = churchMode
     ? [
         [pending.length, "Solicitações pendentes", Clock3, "amber"],

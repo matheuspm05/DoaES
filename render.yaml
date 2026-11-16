@@ -17,3 +17,5 @@ services:
         sync: false
       - key: API_RATE_LIMIT
         value: "600"
+      - key: SESSION_SECRET
+        generateValue: true

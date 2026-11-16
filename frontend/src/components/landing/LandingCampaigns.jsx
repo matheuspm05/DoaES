@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { CampaignCard, Empty } from "../index";
-import { useDemo } from "../../contexts/demo";
+import { useAuth } from "../../contexts/auth";
 
 export default function LandingCampaigns() {
-  const { campaigns } = useDemo();
+  const { campaigns, publicLoading, publicError, loadPublic } = useAuth();
   const featured = campaigns.filter((c) => c.ativa).slice(0, 3);
   return (
     <section
@@ -23,7 +23,16 @@ export default function LandingCampaigns() {
             <ArrowRight size={17} />
           </Link>
         </div>
-        {featured.length ? (
+        {publicLoading ? (
+          <p role="status">Carregando campanhas…</p>
+        ) : publicError ? (
+          <div>
+            <p role="alert">{publicError}</p>
+            <button className="button" onClick={loadPublic}>
+              Tentar novamente
+            </button>
+          </div>
+        ) : featured.length ? (
           <div className="landing-campaign-grid">
             {featured.map((campaign) => (
               <CampaignCard key={campaign.id} campaign={campaign} />

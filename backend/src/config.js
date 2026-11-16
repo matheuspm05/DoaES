@@ -39,7 +39,16 @@ export function readConfig(env = process.env) {
   const rateLimit = Number(env.API_RATE_LIMIT || 600);
   if (!Number.isInteger(rateLimit) || rateLimit < 1 || rateLimit > 10000)
     throw new Error("API_RATE_LIMIT deve ser um inteiro entre 1 e 10000.");
+  const sessionSecret = env.SESSION_SECRET || "";
+  if (
+    (production || sessionSecret) &&
+    (sessionSecret.length < 32 ||
+      sessionSecret.length > 256 ||
+      /\s/.test(sessionSecret))
+  )
+    throw new Error("SESSION_SECRET deve ter pelo menos 32 caracteres.");
   return {
+    sessionSecret,
     production,
     port,
     host: "0.0.0.0",
